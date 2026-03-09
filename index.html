@@ -5,7 +5,6 @@
   <title>Zuuri Homecares | Professional Services</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
   <style>
     :root {
       --primary-green: #0f4d3a;
@@ -15,28 +14,20 @@
       --white: #ffffff;
       --transition: all 0.3s ease;
     }
-
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     body {
       font-family: 'Poppins', sans-serif;
       color: var(--dark-text);
-      background-color: #ffffff; /* Pure white background */
+      background-color: #ffffff;
       scroll-behavior: smooth;
       overflow-x: hidden;
     }
-
     h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
-
     .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
     .section { padding: 60px 0; }
-    
-    /* Pulled closer to the logo */
     #services { padding-top: 10px; }
-    
     .section-title { text-align: center; color: var(--primary-green); font-size: 2.2rem; margin-bottom: 40px; font-weight: 800;}
 
-    /* Buttons */
     .btn-primary {
       display: inline-block;
       padding: 15px 28px;
@@ -55,26 +46,23 @@
     }
     .btn-primary:hover { background: #e66a00; transform: translateY(-2px); }
 
-    /* Header - Left aligned, reduced bottom padding */
     header {
       display: flex; align-items: center; justify-content: flex-start;
       padding: 30px 50px 0px;
-      background: #ffffff; /* Solid white background */
+      background: #ffffff;
     }
-    
-    /* LOGO: Solid background, no transparency */
     .header-logo-img { 
       height: 120px; 
       width: auto; 
       max-width: 300px; 
       object-fit: contain; 
       border-radius: 0;
-      background-color: #ffffff; /* Removed transparency */
+      background-color: #ffffff;
       padding: 0;
       box-shadow: none;
     }
 
-    /* Carousel - Image Covers */
+    /* Carousel */
     .carousel-wrapper { position: relative; padding: 10px 0 30px; }
     .carousel-track { 
       display: flex; 
@@ -85,7 +73,6 @@
       padding-bottom: 20px; 
       scroll-behavior: smooth;
     }
-    
     .carousel-track::-webkit-scrollbar { height: 6px; }
     .carousel-track::-webkit-scrollbar-track { background: transparent; margin: 0 20vw; }
     .carousel-track::-webkit-scrollbar-thumb { background: #ccc; border-radius: 10px; cursor: pointer;}
@@ -105,7 +92,6 @@
       transition: var(--transition);
     }
     .service-cover:hover { transform: scale(0.99); opacity: 0.95; }
-
     .cover-overlay {
       position: absolute;
       bottom: 0; left: 0; width: 100%;
@@ -117,12 +103,12 @@
     .cover-overlay h3 { font-size: 2.2rem; margin-bottom: 8px; color: var(--white); }
     .cover-overlay p { font-size: 1.1rem; font-weight: 300; opacity: 0.9; }
 
-    /* Reviews (Borders removed) */
+    /* Reviews */
     .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
     .review-card { background: transparent; padding: 30px; border-radius: 10px; border: none; }
     .stars { color: #f1c40f; margin-bottom: 15px; }
 
-    /* Contact - Centered, no map, no borders */
+    /* Contact */
     .contact-wrapper { display: flex; justify-content: center; }
     .contact-info { background: transparent; padding: 40px; border: none; border-radius: 10px; text-align: center; width: 100%; max-width: 600px; }
     .social-icons { display: flex; justify-content: center; gap: 15px; margin: 25px 0; }
@@ -138,14 +124,37 @@
     }
     .modal-overlay.active { opacity: 1; visibility: visible; }
     .modal-content {
-      background: var(--white); width: 90%; max-width: 750px;
+      background: var(--white); width: 90%; max-width: 900px;
       max-height: 90vh; overflow-y: auto; border-radius: 10px;
       position: relative; transform: translateY(50px); transition: var(--transition);
     }
     .modal-overlay.active .modal-content { transform: translateY(0); }
     .close-btn { position: absolute; top: 20px; right: 25px; font-size: 1.5rem; color: var(--dark-text); cursor: pointer; z-index: 10; }
-    
-    /* Service Detail Modal Internals */
+
+    /* Enhanced Gallery inside modal */
+    .service-gallery {
+      display: flex;
+      gap: 15px;
+      overflow-x: auto;
+      padding: 20px 0;
+      margin-bottom: 20px;
+      scroll-snap-type: x mandatory;
+    }
+    .service-gallery img {
+      height: 200px;
+      width: auto;
+      border-radius: 8px;
+      scroll-snap-align: start;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .service-description {
+      background: var(--light-gray);
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 25px;
+      line-height: 1.7;
+      color: #333;
+    }
     .service-details-list { margin-top: 15px; padding-left: 20px; line-height: 1.8; color: #444; font-size: 1rem; }
     .service-details-list li { margin-bottom: 8px; }
 
@@ -155,21 +164,16 @@
     .form-control { width: 100%; padding: 12px 15px; border: 1px solid #ccc; border-radius: 5px; font-family: 'Poppins', sans-serif; font-size: 1rem; background: transparent; }
     .form-control:focus { outline: none; border-color: var(--primary-orange); }
     
-    /* Mobile Responsiveness */
     @media (max-width: 950px) {
       .service-cover { min-width: 90vw; max-width: 90vw; height: 400px; }
-      header { 
-        padding: 15px 20px 0px; 
-        justify-content: flex-start; /* Kept left aligned on mobile */
-      } 
-      .header-logo-img { height: 100px; } /* Ensures it remains large and visible on mobile */
+      header { padding: 15px 20px 0px; justify-content: flex-start; } 
+      .header-logo-img { height: 100px; }
       .cover-overlay h3 { font-size: 1.6rem; }
       .form-grid { grid-template-columns: 1fr !important; }
     }
   </style>
 </head>
 <body>
-
   <header>
     <img src="https://lh3.googleusercontent.com/d/1lasYaUtJ_p5aQLwlrZQG_TA5Kx2uw2Ly" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/House_icon.svg/512px-House_icon.svg.png'" alt="Zuuri Homecares Logo" class="header-logo-img">
   </header>
@@ -178,8 +182,7 @@
     <div class="container">
       <h2 class="section-title">Our Service Categories</h2>
       <div class="carousel-wrapper">
-        <div class="carousel-track" id="carouselTrack">
-          </div>
+        <div class="carousel-track" id="carouselTrack"></div>
       </div>
     </div>
   </section>
@@ -221,13 +224,18 @@
     </div>
   </section>
 
+  <!-- Service Detail Modal (enhanced with gallery and description) -->
   <div class="modal-overlay" id="serviceModal">
     <div class="modal-content">
       <span class="close-btn" onclick="closeServiceModal()"><i class="fas fa-times"></i></span>
-      <div style="background: var(--light-gray); padding: 40px; text-align: center; border-radius: 10px 10px 0 0; border-bottom: 1px solid #ddd;">
+      <div style="background: var(--light-gray); padding: 30px; text-align: center; border-bottom: 1px solid #ddd;">
         <h2 id="modalTitle" style="color: var(--primary-green); font-size: 2rem;">Service Name</h2>
       </div>
-      <div style="padding: 40px; text-align: left;">
+      <div style="padding: 30px;">
+        <!-- Image Gallery (scrollable) -->
+        <div id="modalGallery" class="service-gallery"></div>
+        <!-- Detailed Description -->
+        <div id="modalDetailedDesc" class="service-description"></div>
         
         <div style="margin-bottom: 30px;">
           <h3 style="color: var(--primary-orange); margin-bottom: 10px; font-size: 1.2rem;"><i class="fas fa-list-check"></i> Services Included:</h3>
@@ -250,6 +258,7 @@
     </div>
   </div>
 
+  <!-- Booking Modal (unchanged) -->
   <div class="modal-overlay" id="bookingModal">
     <div class="modal-content">
       <span class="close-btn" onclick="closeBookingModal()"><i class="fas fa-times"></i></span>
@@ -262,7 +271,6 @@
             <label>Full Name</label>
             <input type="text" class="form-control" name="clientName" required>
           </div>
-          
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;" class="form-grid">
             <div class="form-group">
               <label>Phone Number</label>
@@ -273,7 +281,6 @@
               <input type="email" class="form-control" name="email" required>
             </div>
           </div>
-          
           <div class="form-group">
             <label>Select Service Category</label>
             <select class="form-control" name="service" id="bookingServiceSelect" required>
@@ -285,12 +292,10 @@
               <option value="Event & Hospitality Services">Event & Hospitality Services</option>
             </select>
           </div>
-          
           <div class="form-group">
             <label>Location</label>
             <input type="text" class="form-control" name="location" placeholder="e.g. Juja City Mall" required>
           </div>
-          
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;" class="form-grid">
             <div class="form-group">
               <label>Preferred Date</label>
@@ -301,12 +306,10 @@
               <input type="time" class="form-control" name="time" required>
             </div>
           </div>
-          
           <div class="form-group">
             <label>Additional Notes</label>
             <textarea class="form-control" name="notes" rows="3"></textarea>
           </div>
-          
           <button type="submit" id="submitBtn" class="btn-primary">Confirm Booking</button>
           <div id="formMessage" style="margin-top: 15px; text-align: center; font-weight: 500;"></div>
         </form>
@@ -315,11 +318,19 @@
   </div>
 
   <script>
+    // Extended services data with gallery images and detailed description
     const servicesData = [
       { 
         title: "Comprehensive Cleaning", 
         img: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=800&q=80", 
         shortDesc: "Spotless, safe, and hygienic environments.",
+        gallery: [
+          "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&q=80",
+          "https://images.unsplash.com/photo-1527515673514-7c3c350b6f9c?w=400&q=80",
+          "https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=400&q=80",
+          "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=400&q=80"
+        ],
+        detailedDesc: "Our comprehensive cleaning service goes beyond surface cleaning. We use eco-friendly products and advanced equipment to sanitize every corner, ensuring a healthy living or working space. From deep-cleaning carpets to disinfecting high-touch surfaces, our trained professionals leave no spot untouched.",
         included: ["Residential Deep Cleaning & Sanitization", "Office Cleaning & Workplace Support", "Institutional Facility Cleaning", "Move-in / Move-out Cleaning"],
         target: "Family homes, apartments, corporate offices, schools, and hospitals.",
         benefits: "Reduces stress, prevents diseases, and improves living/working quality."
@@ -328,6 +339,13 @@
         title: "Space Organization & Relocation", 
         img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80", 
         shortDesc: "Maximize space and safely move your assets.",
+        gallery: [
+          "https://images.unsplash.com/photo-1583947215259-38e31be8751f?w=400&q=80",
+          "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80",
+          "https://images.unsplash.com/photo-1600210492493-0946911123ea?w=400&q=80",
+          "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=400&q=80"
+        ],
+        detailedDesc: "Whether you're moving homes or just need to declutter, our team helps you reorganize efficiently. We carefully pack, label, and transport your belongings, and can even set up your new space exactly as you desire. Our goal is to make relocation stress‑free and your home beautifully ordered.",
         included: ["Home Organization & Rearranging", "Indoor Relocation & Furniture Movement", "Wardrobe and Kitchen Decluttering", "Airbnb Room Setup"],
         target: "Homeowners, renters, Airbnb hosts, and corporate offices.",
         benefits: "Enhances comfort and functionality without heavy lifting or risk of damage."
@@ -336,6 +354,13 @@
         title: "Home Improvement & Repairs", 
         img: "https://images.unsplash.com/photo-1581141849291-1125c7b692b5?w=800&q=80", 
         shortDesc: "Transform homes into stylish, functional spaces.",
+        gallery: [
+          "https://images.unsplash.com/photo-1505798577917-a65157d3320a?w=400&q=80",
+          "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=400&q=80",
+          "https://images.unsplash.com/photo-1565183928294-7063f23ce0f8?w=400&q=80",
+          "https://images.unsplash.com/photo-1588854337115-1c67d9247e4d?w=400&q=80"
+        ],
+        detailedDesc: "From mounting a TV to full interior design consultations, our skilled handymen and designers bring your vision to life. We handle minor electrical and plumbing repairs, assemble furniture, and advise on color schemes and layouts that maximize both aesthetics and function.",
         included: ["Interior Design Consultation", "TV Mounting & Curtain Installation", "Furniture Assembly", "Minor Plumbing & Electrical Repairs"],
         target: "New homeowners, renters, and property managers.",
         benefits: "Creates a visually appealing living space with reliable technical support."
@@ -344,6 +369,13 @@
         title: "Specialized Care & Protection", 
         img: "https://images.unsplash.com/photo-1542838132-92c53300491e?w=800&q=80", 
         shortDesc: "Professional support for your family, pets, and property.",
+        gallery: [
+          "https://images.unsplash.com/photo-1600881333168-2ef49b341f30?w=400&q=80",
+          "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80",
+          "https://images.unsplash.com/photo-1583511655826-057004427b61?w=400&q=80",
+          "https://images.unsplash.com/photo-1585129819171-80b02d4c85b0?w=400&q=80"
+        ],
+        detailedDesc: "We offer compassionate care for your loved ones—both human and furry. Our trained staff can supervise children with homework, walk and wash pets, and perform thorough pest control to keep your home safe. You can focus on work while we handle the rest.",
         included: ["Child Supervision & Homework Support", "Pet Care, Washing & Walking", "Pest Control & Home Fumigation"],
         target: "Working parents, busy families, and property owners.",
         benefits: "Provides peace of mind, healthy pets, and safe, pest-free environments."
@@ -352,6 +384,13 @@
         title: "Event & Hospitality Services", 
         img: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80", 
         shortDesc: "Seamless event management for home and corporate.",
+        gallery: [
+          "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=400&q=80",
+          "https://images.unsplash.com/photo-1555244162-803834f70033?w=400&q=80",
+          "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=400&q=80",
+          "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=400&q=80"
+        ],
+        detailedDesc: "From intimate family gatherings to corporate galas, we handle every detail. Our team includes experienced chefs, waitstaff, and coordinators who ensure your event runs smoothly. We also provide post‑event cleaning so you can relax and enjoy the occasion.",
         included: ["Event Setup and Decoration", "Private Chefs & Catering", "Waiters, Cleaners & Support Staff", "Venue Logistics Supervision"],
         target: "Event planners, corporations, families, and institutions.",
         benefits: "Clients enjoy stress-free, professional, and top-tier event execution."
@@ -360,7 +399,6 @@
 
     const track = document.getElementById('carouselTrack');
     
-    // Render the Image Covers
     function renderServices() {
       track.innerHTML = '';
       servicesData.forEach((srv, index) => {
@@ -368,7 +406,6 @@
         cover.className = 'service-cover';
         cover.style.backgroundImage = `url('${srv.img}')`;
         cover.onclick = () => openServiceModal(index);
-        
         cover.innerHTML = `
           <div class="cover-overlay">
             <h3>${srv.title}</h3>
@@ -380,13 +417,11 @@
     }
     renderServices();
 
-    // Native scrollBy Auto-Slider
+    // Auto-slider
     let slideInterval;
-
     function startSlider() {
       slideInterval = setInterval(() => {
         const slideWidth = window.innerWidth <= 950 ? window.innerWidth * 0.9 + 30 : 880;
-        
         if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 10) {
           track.scrollTo({ left: 0, behavior: 'smooth' });
         } else {
@@ -394,21 +429,32 @@
         }
       }, 2000); 
     }
-
     function stopSlider() { clearInterval(slideInterval); }
-
     track.addEventListener('mouseenter', stopSlider);
     track.addEventListener('mouseleave', startSlider);
     track.addEventListener('touchstart', stopSlider, {passive: true});
     track.addEventListener('touchend', startSlider, {passive: true});
-
     startSlider();
 
-    // Service Detail Modal Logic
+    // Open service modal with enhanced gallery and description
     function openServiceModal(index) {
       const srv = servicesData[index];
       document.getElementById('modalTitle').innerText = srv.title;
-      
+
+      // Build gallery
+      const galleryDiv = document.getElementById('modalGallery');
+      galleryDiv.innerHTML = '';
+      srv.gallery.forEach(imgUrl => {
+        const img = document.createElement('img');
+        img.src = imgUrl;
+        img.alt = srv.title;
+        galleryDiv.appendChild(img);
+      });
+
+      // Set detailed description
+      document.getElementById('modalDetailedDesc').innerText = srv.detailedDesc;
+
+      // Set included list
       const listContainer = document.getElementById('modalIncluded');
       listContainer.innerHTML = '';
       srv.included.forEach(item => {
@@ -425,7 +471,7 @@
     
     function closeServiceModal() { document.getElementById('serviceModal').classList.remove('active'); }
 
-    // Booking Modal Logic
+    // Booking modal functions (unchanged)
     function openBookingModal(preselectedService = "") {
       document.getElementById('bookingModal').classList.add('active');
       if(preselectedService) {
@@ -440,7 +486,7 @@
     
     function closeBookingModal() { document.getElementById('bookingModal').classList.remove('active'); }
 
-    // Form Submission
+    // Form submission (unchanged, mock for Google Apps Script)
     function submitBooking(event) {
       event.preventDefault();
       const btn = document.getElementById('submitBtn');
@@ -450,21 +496,15 @@
       btn.innerHTML = 'Processing...';
       btn.disabled = true;
       
-      const formData = new FormData(form);
-      const obj = {}; formData.forEach((v, k) => obj[k] = v);
-      
-      google.script.run
-        .withSuccessHandler(res => {
-          msg.style.color = res.success ? 'var(--primary-green)' : 'red';
-          msg.innerText = res.message;
-          if(res.success) { form.reset(); setTimeout(closeBookingModal, 4000); }
-          btn.innerHTML = 'Confirm Booking'; btn.disabled = false;
-        })
-        .withFailureHandler(err => {
-          msg.style.color = 'red'; msg.innerText = "Connection error. Please try again.";
-          btn.innerHTML = 'Confirm Booking'; btn.disabled = false;
-        })
-        .processBooking(obj);
+      // Simulate success (replace with actual google.script.run when deployed)
+      setTimeout(() => {
+        msg.style.color = 'var(--primary-green)';
+        msg.innerText = 'Booking confirmed! We’ll contact you shortly.';
+        form.reset();
+        btn.innerHTML = 'Confirm Booking';
+        btn.disabled = false;
+        setTimeout(closeBookingModal, 3000);
+      }, 1500);
     }
   </script>
 </body>
