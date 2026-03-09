@@ -77,11 +77,12 @@
     .carousel-track::-webkit-scrollbar-track { background: transparent; margin: 0 20vw; }
     .carousel-track::-webkit-scrollbar-thumb { background: #ccc; border-radius: 10px; cursor: pointer;}
     
+    /* STRICT PORTRAIT SLIDES (approx 9:16 ratio) */
     .service-cover {
-      min-width: 850px; 
-      max-width: 850px;
-      height: 450px;
-      border-radius: 10px;
+      min-width: 300px; 
+      max-width: 300px;
+      height: 533px;
+      border-radius: 12px;
       cursor: pointer;
       position: relative;
       background-size: cover;
@@ -90,18 +91,20 @@
       flex-shrink: 0;
       overflow: hidden;
       transition: var(--transition);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
-    .service-cover:hover { transform: scale(0.99); opacity: 0.95; }
+    .service-cover:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
+    
     .cover-overlay {
       position: absolute;
       bottom: 0; left: 0; width: 100%;
-      padding: 60px 30px 30px;
-      background: linear-gradient(to top, rgba(15, 77, 58, 0.95), transparent);
+      padding: 80px 20px 25px; 
+      background: linear-gradient(to top, rgba(15, 77, 58, 0.98) 0%, rgba(15, 77, 58, 0.8) 50%, transparent 100%);
       color: var(--white);
       text-align: left;
     }
-    .cover-overlay h3 { font-size: 2.2rem; margin-bottom: 8px; color: var(--white); }
-    .cover-overlay p { font-size: 1.1rem; font-weight: 300; opacity: 0.9; }
+    .cover-overlay h3 { font-size: 1.6rem; margin-bottom: 10px; color: var(--white); line-height: 1.3; font-weight: 700;}
+    .cover-overlay p { font-size: 0.95rem; font-weight: 300; opacity: 0.9; line-height: 1.5;}
 
     /* Reviews */
     .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
@@ -131,7 +134,7 @@
     .modal-overlay.active .modal-content { transform: translateY(0); }
     .close-btn { position: absolute; top: 20px; right: 25px; font-size: 1.5rem; color: var(--dark-text); cursor: pointer; z-index: 10; }
 
-    /* Enhanced Gallery inside modal */
+    /* Enhanced Gallery inside modal - Also strictly Portrait */
     .service-gallery {
       display: flex;
       gap: 15px;
@@ -141,12 +144,15 @@
       scroll-snap-type: x mandatory;
     }
     .service-gallery img {
-      height: 200px;
-      width: auto;
+      width: 220px;
+      height: 330px;
+      object-fit: cover;
       border-radius: 8px;
       scroll-snap-align: start;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      flex-shrink: 0;
     }
+    
     .service-description {
       background: var(--light-gray);
       padding: 20px;
@@ -165,10 +171,11 @@
     .form-control:focus { outline: none; border-color: var(--primary-orange); }
     
     @media (max-width: 950px) {
-      .service-cover { min-width: 90vw; max-width: 90vw; height: 400px; }
+      /* Mobile Portrait Settings */
+      .service-cover { min-width: 260px; max-width: 260px; height: 460px; }
       header { padding: 15px 20px 0px; justify-content: flex-start; } 
       .header-logo-img { height: 100px; }
-      .cover-overlay h3 { font-size: 1.6rem; }
+      .cover-overlay h3 { font-size: 1.4rem; }
       .form-grid { grid-template-columns: 1fr !important; }
     }
   </style>
@@ -209,7 +216,7 @@
     <div class="container contact-wrapper">
       <div class="contact-info">
         <h3 style="color: var(--primary-orange); font-size: 1.8rem; margin-bottom: 20px;">Get in Touch</h3>
-        <p style="margin-bottom: 15px; font-size: 1.1rem;"><i class="fas fa-phone-alt" style="color: var(--primary-green); margin-right: 10px;"></i> 0707 113 265</p>
+        <p style="margin-bottom: 15px; font-size: 1.1rem;"><i class="fas fa-phone-alt" style="color: var(--primary-green); margin-right: 10px;"></i> 0719 300 421</p>
         <p style="margin-bottom: 15px; font-size: 1.1rem;"><i class="fas fa-envelope" style="color: var(--primary-green); margin-right: 10px;"></i> hello@zuurihomecares.co.ke</p>
         <p style="margin-bottom: 15px; font-size: 1.1rem;"><i class="fas fa-map-marker-alt" style="color: var(--primary-green); margin-right: 10px;"></i> Juja City Mall, Nairobi</p>
         
@@ -224,7 +231,6 @@
     </div>
   </section>
 
-  <!-- Service Detail Modal (enhanced with gallery and description) -->
   <div class="modal-overlay" id="serviceModal">
     <div class="modal-content">
       <span class="close-btn" onclick="closeServiceModal()"><i class="fas fa-times"></i></span>
@@ -232,9 +238,7 @@
         <h2 id="modalTitle" style="color: var(--primary-green); font-size: 2rem;">Service Name</h2>
       </div>
       <div style="padding: 30px;">
-        <!-- Image Gallery (scrollable) -->
         <div id="modalGallery" class="service-gallery"></div>
-        <!-- Detailed Description -->
         <div id="modalDetailedDesc" class="service-description"></div>
         
         <div style="margin-bottom: 30px;">
@@ -258,7 +262,6 @@
     </div>
   </div>
 
-  <!-- Booking Modal (unchanged) -->
   <div class="modal-overlay" id="bookingModal">
     <div class="modal-content">
       <span class="close-btn" onclick="closeBookingModal()"><i class="fas fa-times"></i></span>
@@ -274,7 +277,7 @@
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;" class="form-grid">
             <div class="form-group">
               <label>Phone Number</label>
-              <input type="tel" class="form-control" name="phone" placeholder="0719 300 421" required>
+              <input type="tel" class="form-control" name="phone" placeholder="0707 113 265" required>
             </div>
             <div class="form-group">
               <label>Email Address</label>
@@ -318,7 +321,6 @@
   </div>
 
   <script>
-    // Extended services data with gallery images and detailed description
     const servicesData = [
       { 
         title: "Comprehensive Cleaning", 
@@ -417,11 +419,11 @@
     }
     renderServices();
 
-    // Auto-slider
+    // Auto-slider adjusted for the new 300px width
     let slideInterval;
     function startSlider() {
       slideInterval = setInterval(() => {
-        const slideWidth = window.innerWidth <= 950 ? window.innerWidth * 0.9 + 30 : 880;
+        const slideWidth = window.innerWidth <= 950 ? 290 : 330; 
         if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 10) {
           track.scrollTo({ left: 0, behavior: 'smooth' });
         } else {
@@ -436,12 +438,10 @@
     track.addEventListener('touchend', startSlider, {passive: true});
     startSlider();
 
-    // Open service modal with enhanced gallery and description
     function openServiceModal(index) {
       const srv = servicesData[index];
       document.getElementById('modalTitle').innerText = srv.title;
 
-      // Build gallery
       const galleryDiv = document.getElementById('modalGallery');
       galleryDiv.innerHTML = '';
       srv.gallery.forEach(imgUrl => {
@@ -451,10 +451,8 @@
         galleryDiv.appendChild(img);
       });
 
-      // Set detailed description
       document.getElementById('modalDetailedDesc').innerText = srv.detailedDesc;
 
-      // Set included list
       const listContainer = document.getElementById('modalIncluded');
       listContainer.innerHTML = '';
       srv.included.forEach(item => {
@@ -471,7 +469,6 @@
     
     function closeServiceModal() { document.getElementById('serviceModal').classList.remove('active'); }
 
-    // Booking modal functions (unchanged)
     function openBookingModal(preselectedService = "") {
       document.getElementById('bookingModal').classList.add('active');
       if(preselectedService) {
@@ -486,7 +483,6 @@
     
     function closeBookingModal() { document.getElementById('bookingModal').classList.remove('active'); }
 
-    // Form submission (unchanged, mock for Google Apps Script)
     function submitBooking(event) {
       event.preventDefault();
       const btn = document.getElementById('submitBtn');
@@ -496,7 +492,6 @@
       btn.innerHTML = 'Processing...';
       btn.disabled = true;
       
-      // Simulate success (replace with actual google.script.run when deployed)
       setTimeout(() => {
         msg.style.color = 'var(--primary-green)';
         msg.innerText = 'Booking confirmed! We’ll contact you shortly.';
