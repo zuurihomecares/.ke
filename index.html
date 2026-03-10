@@ -951,8 +951,11 @@
       .header-logo-img { height: 90px; }
       .header-slogan { max-width: 100%; text-align: center; font-size: 0.85rem; } 
 
-      .carousel-wrapper { height: 420px; padding: 0 5px; }
+      /* CAROUSEL MOBILE OVERLAPPING AND VISIBILITY FIX */
+      .carousel-wrapper { height: 420px; padding: 0; }
+      .carousel-track { padding: 0 calc(50% - 130px); gap: 30px; } 
       .service-cover { flex: 0 0 260px; height: 350px; }
+
       .cover-overlay { padding: 40px 15px 15px; }
       .cover-overlay h3 { font-size: 1.3rem; } 
       .cover-overlay p { font-size: 0.85rem; margin-top: 8px; } 
@@ -991,8 +994,11 @@
     @media (max-width: 480px) {
       body { font-size: 12px; } 
       
-      .carousel-wrapper { height: 360px; }
+      /* CAROUSEL PHONE OVERLAPPING AND VISIBILITY FIX */
+      .carousel-wrapper { height: 360px; padding: 0; }
+      .carousel-track { padding: 0 calc(50% - 110px); gap: 25px; } 
       .service-cover { flex: 0 0 220px; height: 300px; }
+      
       .cover-overlay h3 { font-size: 1.1rem; } 
       .cover-overlay p { font-size: 0.8rem; }
       
@@ -1447,7 +1453,7 @@
       <img src="https://gmcleaning.co.ke/wp-content/uploads/2025/09/Professional-Upholstery-Cleaning-Service.webp" alt="Work 1" class="post-image">
       <img src="https://www.makeitclean.com.au/wp-content/uploads/2025/09/Strata-buildings-cleaning.webp" alt="Work 2" class="post-image">
       <img src="https://www.kcjlandscaping.ae/wp-content/uploads/2020/11/Garden-Maintenance-Services-Dubai-2.jpg" alt="Work 3" class="post-image">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz4aeMwRUM91k60A1oHmW69JWR1Uufwe59zQ&s" alt="Work 4" class="post-image">
+      <img src="https://cdn.tuko.co.ke/images/1120/4121adbd46000dc2.jpeg?v=1" alt="Work 4" class="post-image">
     </div>
   </div>
 </div>
@@ -1693,6 +1699,30 @@
     img.onerror = () => { slide.style.backgroundImage = "url('https://images.pexels.com/photos/4239031/pexels-photo-4239031.jpeg?w=600')"; };
     img.src = imgUrl;
   });
+
+  // ======= AUTO-SCROLL CAROUSEL LOGIC =======
+  let autoScrollInterval;
+  function startAutoScroll() {
+    stopAutoScroll();
+    autoScrollInterval = setInterval(() => {
+      const covers = Array.from(document.querySelectorAll('.service-cover'));
+      if(!covers.length) return;
+      const activeIndex = covers.findIndex(c => c.classList.contains('active'));
+      let nextIndex = activeIndex + 1;
+      if(nextIndex >= covers.length) nextIndex = 0;
+      covers[nextIndex].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    }, 3500);
+  }
+  function stopAutoScroll() {
+    clearInterval(autoScrollInterval);
+  }
+
+  track.addEventListener('mouseenter', stopAutoScroll);
+  track.addEventListener('mouseleave', startAutoScroll);
+  track.addEventListener('touchstart', stopAutoScroll, {passive: true});
+  track.addEventListener('touchend', startAutoScroll, {passive: true});
+
+  startAutoScroll(); // Initialize auto-scroll
 </script>
 
 <script type="application/ld+json">
