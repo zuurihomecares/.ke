@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
   
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230f4d3a'%3E%3Cpath d='M12 3L2 9h3v8h14V9h3L12 3zm0 4.5c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm-4 7v-2c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2H8z'/%3E%3C/svg%3E">
-  <link rel="alternate icon" href="https://img.icons8.com/color/48/000000/house.png">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='25' fill='%230f4d3a'/%3E%3Cpath d='M25 30 h50 l-35 40 h35' fill='none' stroke='%23ff7a00' stroke-width='12' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="alternate icon" href="https://img.icons8.com/color/48/000000/cleaning-brush.png">
   
   <title>Zuuri Homecares | Moving, Cleaning & Professional Home Services Nairobi & Kiambu</title>
   <meta name="description" content="Zuuri Homecares offers top-tier moving, relocation, professional cleaning, deep cleaning, institution maintenance, and home care services in Nairobi and Kiambu. Trusted & eco-friendly. Call +254 719 300 421.">
-  <meta name="keywords" content="moving services Nairobi, relocation Kiambu, professional cleaners, house cleaning, office cleaning, deep cleaning, move-in cleaning, move-out cleaning, packing and unpacking, post-construction cleaning, event planning, pet care, garden maintenance, residential cleaners, commercial cleaners, Juja home care, Ruiru cleaners, Thika road cleaning, Kenyatta University environs, Zuuri Homecares, +254719300421">
+  <meta name="keywords" content="moving, relocation, cleaners, cleaning club organizer, Nairobi jobs, sofa cleaning, mattress cleaning, deep cleaning, all other cleaning jobs">
   <meta name="author" content="Zuuri Homecares">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://zuurihomecares.com">
@@ -693,13 +693,20 @@
       font-size: 0.85rem;
       color: #aaa;
     }
+    /* Feed Images - Clickable enhancements */
     .post-image {
       width: 100%;
       max-height: 400px;
       object-fit: cover;
       display: block;
       border-bottom: 1px solid rgba(255,122,0,0.2);
+      cursor: pointer;
+      transition: opacity 0.3s ease;
     }
+    .post-image:hover {
+      opacity: 0.85;
+    }
+    
     .post-actions {
       display: flex;
       gap: 20px;
@@ -718,15 +725,29 @@
       gap: 5px;
       transition: all 0.2s;
     }
+    /* Action Button Click Animations */
+    .action-btn:active i {
+      transform: scale(0.8);
+    }
     .action-btn.liked i {
       color: #ff3040;
       font-weight: 900;
+      animation: popHeart 0.3s ease;
+    }
+    @keyframes popHeart {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.4); }
+      100% { transform: scale(1); }
     }
     .action-btn i {
-      transition: transform 0.2s;
+      transition: transform 0.2s, color 0.2s;
     }
     .action-btn:hover i {
       transform: scale(1.1);
+      color: var(--primary-orange);
+    }
+    .action-btn.liked:hover i {
+      color: #ff3040;
     }
     .action-btn span {
       font-size: 0.9rem;
@@ -762,7 +783,7 @@
       margin-top: 3px;
     }
 
-    /* Why choose us cards (keep as is) */
+    /* Why choose us cards */
     .why-us-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -842,6 +863,7 @@
     }
     .faq-item.active .faq-question i { transform: rotate(90deg); }
 
+    /* Gallery */
     .gallery-grid-wiki {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -856,10 +878,49 @@
       border: 2px solid rgba(255, 122, 0, 0.3);
       box-shadow: 0 5px 15px rgba(0,0,0,0.3);
       transition: 0.3s;
+      cursor: pointer;
     }
     .gallery-grid-wiki img:hover {
       transform: scale(1.03);
       border-color: var(--primary-orange);
+    }
+
+    /* ========== LIGHTBOX STYLES ========== */
+    #lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9);
+      z-index: 100000;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    #lightbox.active {
+      display: flex;
+    }
+    #lightbox img {
+      max-width: 90%;
+      max-height: 90vh;
+      border-radius: 10px;
+      box-shadow: 0 0 30px rgba(255,122,0,0.3);
+      border: 2px solid var(--primary-orange);
+      animation: zoomIn 0.3s ease;
+    }
+    #lightbox-close {
+      position: absolute;
+      top: 20px; right: 30px;
+      color: white;
+      font-size: 2.5rem;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    #lightbox-close:hover {
+      color: var(--primary-orange);
+    }
+    @keyframes zoomIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
     }
 
     @keyframes fadeUp {
@@ -868,13 +929,9 @@
     }
 
     /* ===== ENHANCED RESPONSIVE DESIGN (UPGRADED) ===== */
-    
-    /* Large Tablets */
     @media (max-width: 1024px) {
       .about-grid { gap: 30px; }
     }
-
-    /* Tablets / Small Desktops */
     @media (max-width: 900px) {
       .hero-content h2 { font-size: 2.5rem; }
       .modal-hero { height: 50vh; }
@@ -882,55 +939,33 @@
       .about-text .section-title { text-align: center; }
       .about-text .section-title::after { left: 50%; transform: translateX(-50%); }
     }
-
-    /* Mobile Devices */
     @media (max-width: 768px) {
       .section { padding: 60px 0; }
       .section-title { font-size: 2rem; margin-bottom: 40px; }
-      
-      /* Header Adjustments */
       header { flex-direction: column; gap: 15px; padding: 15px 5%; }
       .header-logo-img { height: 120px; }
       .header-slogan { max-width: 100%; text-align: center; font-size: 1.1rem; }
-
-      /* Carousel Adjustments */
       .carousel-wrapper { height: 500px; padding: 0 10px; }
       .service-cover { flex: 0 0 300px; height: 420px; }
       .cover-overlay h3 { font-size: 1.8rem; }
-      
-      /* Grids to Single Column */
       .about-features { grid-template-columns: 1fr; }
       .reviews-grid { grid-template-columns: 1fr; }
-      
-      /* Modal Hero & Buttons */
       .hero-buttons { flex-direction: column; }
       .hero-buttons .hero-btn { width: 100%; justify-content: center; }
-      
-      /* Floating WhatsApp Resize */
       .floating-whatsapp { bottom: 20px; right: 20px; }
       .whatsapp-button { width: 60px; height: 60px; font-size: 2rem; }
-      
-      /* Modal Body & Feed */
       .modal-body { padding: 30px 15px; }
       .post-actions { flex-wrap: wrap; justify-content: space-between; gap: 10px; }
     }
-
-    /* Small Mobile Devices */
     @media (max-width: 480px) {
-      /* Further reduce carousel size to prevent horizontal clipping */
       .carousel-wrapper { height: 450px; }
       .service-cover { flex: 0 0 260px; height: 380px; }
       .cover-overlay h3 { font-size: 1.5rem; }
-      
-      /* Tweak header to fit tiny screens */
       .header-logo-img { height: 90px; }
       .header-slogan { font-size: 1rem; }
-      
       .section-title { font-size: 1.8rem; }
-      
       .hero-content h2 { font-size: 2rem; }
       .hero-description { font-size: 1.1rem; }
-      
       .post-title { font-size: 1.3rem; }
     }
   </style>
@@ -1067,8 +1102,8 @@
         <img src="https://images.pexels.com/photos/4107278/pexels-photo-4107278.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Household Chores" class="post-image">
         <div class="post-actions">
           <button class="action-btn like-btn"><i class="far fa-heart"></i> <span>24</span></button>
-          <button class="action-btn"><i class="far fa-comment"></i> <span>5</span></button>
-          <button class="action-btn"><i class="far fa-share-square"></i> <span>3</span></button>
+          <button class="action-btn comment-btn"><i class="far fa-comment"></i> <span>5</span></button>
+          <button class="action-btn share-btn"><i class="far fa-share-square"></i> <span>3</span></button>
         </div>
         <div class="post-content">
           <h4 class="post-title">Household Chore Management</h4>
@@ -1096,8 +1131,8 @@
         <img src="https://images.pexels.com/photos/4239031/pexels-photo-4239031.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Deep Cleaning" class="post-image">
         <div class="post-actions">
           <button class="action-btn like-btn"><i class="far fa-heart"></i> <span>42</span></button>
-          <button class="action-btn"><i class="far fa-comment"></i> <span>8</span></button>
-          <button class="action-btn"><i class="far fa-share-square"></i> <span>6</span></button>
+          <button class="action-btn comment-btn"><i class="far fa-comment"></i> <span>8</span></button>
+          <button class="action-btn share-btn"><i class="far fa-share-square"></i> <span>6</span></button>
         </div>
         <div class="post-content">
           <h4 class="post-title">Professional Cleaning Services</h4>
@@ -1125,8 +1160,8 @@
         <img src="https://www.buyrentkenya.com/discover/wp-content/uploads/2023/11/brkmarketing-image-of-a-closet-room-that-is-stylish-modern-and-ded73a33-4b7f-41ec-b4c1-c329bfdbd5fd-1.png" alt="Home Organization" class="post-image">
         <div class="post-actions">
           <button class="action-btn like-btn"><i class="far fa-heart"></i> <span>18</span></button>
-          <button class="action-btn"><i class="far fa-comment"></i> <span>3</span></button>
-          <button class="action-btn"><i class="far fa-share-square"></i> <span>2</span></button>
+          <button class="action-btn comment-btn"><i class="far fa-comment"></i> <span>3</span></button>
+          <button class="action-btn share-btn"><i class="far fa-share-square"></i> <span>2</span></button>
         </div>
         <div class="post-content">
           <h4 class="post-title">Home Organization & Management</h4>
@@ -1154,8 +1189,8 @@
         <img src="https://images.ctfassets.net/5kq8dse7hipf/7KYjuxQuy7wYHJ7zlJHyAN/2339e4e7387fa6148429c989bc4a4da6/Garden-maintenance-cost.jpg" alt="Garden Care" class="post-image">
         <div class="post-actions">
           <button class="action-btn like-btn"><i class="far fa-heart"></i> <span>31</span></button>
-          <button class="action-btn"><i class="far fa-comment"></i> <span>7</span></button>
-          <button class="action-btn"><i class="far fa-share-square"></i> <span>4</span></button>
+          <button class="action-btn comment-btn"><i class="far fa-comment"></i> <span>7</span></button>
+          <button class="action-btn share-btn"><i class="far fa-share-square"></i> <span>4</span></button>
         </div>
         <div class="post-content">
           <h4 class="post-title">Garden & Compound Care</h4>
@@ -1182,8 +1217,8 @@
         <img src="https://simplyhelping.com.au/wp-content/uploads/2020/09/Did-You-Know-We-Can-Help-with-Pet-Care-Too.png" alt="Pet Care" class="post-image">
         <div class="post-actions">
           <button class="action-btn like-btn"><i class="far fa-heart"></i> <span>15</span></button>
-          <button class="action-btn"><i class="far fa-comment"></i> <span>2</span></button>
-          <button class="action-btn"><i class="far fa-share-square"></i> <span>1</span></button>
+          <button class="action-btn comment-btn"><i class="far fa-comment"></i> <span>2</span></button>
+          <button class="action-btn share-btn"><i class="far fa-share-square"></i> <span>1</span></button>
         </div>
         <div class="post-content">
           <h4 class="post-title">Additional Home Support</h4>
@@ -1253,8 +1288,8 @@
         <img src="https://eshinecleaning.com/wp-content/uploads/2025/04/young-contemporary-black-man-in-uniform-cleaning-k-2025-03-16-11-27-29-utc-1.jpg" alt="Office Cleaning" class="post-image">
         <div class="post-actions">
           <button class="action-btn like-btn"><i class="far fa-heart"></i> <span>22</span></button>
-          <button class="action-btn"><i class="far fa-comment"></i> <span>4</span></button>
-          <button class="action-btn"><i class="far fa-share-square"></i> <span>3</span></button>
+          <button class="action-btn comment-btn"><i class="far fa-comment"></i> <span>4</span></button>
+          <button class="action-btn share-btn"><i class="far fa-share-square"></i> <span>3</span></button>
         </div>
         <div class="post-content">
           <h4 class="post-title">Office Cleaning Services</h4>
@@ -1267,8 +1302,8 @@
           </ul>
         </div>
       </div>
-      </div>
     </div>
+  </div>
 </div>
 
 <div id="eventModal" class="service-modal">
@@ -1303,8 +1338,8 @@
         <img src="https://riverineplace.com/wp-content/uploads/2024/09/A-hotels-buffet-style-type-of-catering-service.jpg" alt="Event Setup" class="post-image">
         <div class="post-actions">
           <button class="action-btn like-btn"><i class="far fa-heart"></i> <span>45</span></button>
-          <button class="action-btn"><i class="far fa-comment"></i> <span>12</span></button>
-          <button class="action-btn"><i class="far fa-share-square"></i> <span>8</span></button>
+          <button class="action-btn comment-btn"><i class="far fa-comment"></i> <span>12</span></button>
+          <button class="action-btn share-btn"><i class="far fa-share-square"></i> <span>8</span></button>
         </div>
         <div class="post-content">
           <h4 class="post-title">Event Planning & Coordination</h4>
@@ -1342,8 +1377,8 @@
         <img src="https://images.pexels.com/photos/4239031/pexels-photo-4239031.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Our History" class="post-image">
         <div class="post-actions">
           <button class="action-btn like-btn"><i class="far fa-heart"></i> <span>78</span></button>
-          <button class="action-btn"><i class="far fa-comment"></i> <span>15</span></button>
-          <button class="action-btn"><i class="far fa-share-square"></i> <span>10</span></button>
+          <button class="action-btn comment-btn"><i class="far fa-comment"></i> <span>15</span></button>
+          <button class="action-btn share-btn"><i class="far fa-share-square"></i> <span>10</span></button>
         </div>
         <div class="post-content">
           <h4 class="post-title">Our History & Values</h4>
@@ -1358,12 +1393,17 @@
     </div>
     <h3 class="section-title-light"><i class="fas fa-images"></i> Work Gallery</h3>
     <div class="gallery-grid-wiki">
-      <img src="https://gmcleaning.co.ke/wp-content/uploads/2025/09/Professional-Upholstery-Cleaning-Service.webp" alt="Work 1">
-      <img src="https://www.makeitclean.com.au/wp-content/uploads/2025/09/Strata-buildings-cleaning.webp" alt="Work 2">
-      <img src="https://www.kcjlandscaping.ae/wp-content/uploads/2020/11/Garden-Maintenance-Services-Dubai-2.jpg" alt="Work 3">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz4aeMwRUM91k60A1oHmW69JWR1Uufwe59zQ&s" alt="Work 4">
+      <img src="https://gmcleaning.co.ke/wp-content/uploads/2025/09/Professional-Upholstery-Cleaning-Service.webp" alt="Work 1" class="post-image">
+      <img src="https://www.makeitclean.com.au/wp-content/uploads/2025/09/Strata-buildings-cleaning.webp" alt="Work 2" class="post-image">
+      <img src="https://www.kcjlandscaping.ae/wp-content/uploads/2020/11/Garden-Maintenance-Services-Dubai-2.jpg" alt="Work 3" class="post-image">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz4aeMwRUM91k60A1oHmW69JWR1Uufwe59zQ&s" alt="Work 4" class="post-image">
     </div>
   </div>
+</div>
+
+<div id="lightbox">
+  <i class="fas fa-times" id="lightbox-close"></i>
+  <img id="lightbox-img" src="" alt="Fullscreen Image">
 </div>
 
 <script>
@@ -1479,6 +1519,14 @@
 
   window.addEventListener('popstate', function(event) {
     if (ignoreNextPop) return;
+    
+    // Close lightbox if open
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox.classList.contains('active')) {
+      lightbox.classList.remove('active');
+      return;
+    }
+
     if (modalOpen) {
       const modals = document.querySelectorAll('.service-modal');
       modals.forEach(m => m.classList.remove('active'));
@@ -1499,8 +1547,10 @@
     item.classList.toggle('active');
   };
 
-  // Like button functionality (red heart)
+  // ======= INTERACTIVE FEED ACTIONS =======
   document.addEventListener('click', function(e) {
+    
+    // 1. LIKE BUTTON
     const likeBtn = e.target.closest('.like-btn');
     if (likeBtn) {
       e.preventDefault();
@@ -1509,13 +1559,11 @@
       let count = parseInt(countSpan.textContent);
       
       if (icon.classList.contains('far')) {
-        // Like
         icon.classList.remove('far');
         icon.classList.add('fas');
         likeBtn.classList.add('liked');
         count++;
       } else {
-        // Unlike
         icon.classList.remove('fas');
         icon.classList.add('far');
         likeBtn.classList.remove('liked');
@@ -1523,7 +1571,63 @@
       }
       countSpan.textContent = count;
     }
+
+    // 2. COMMENT BUTTON
+    const commentBtn = e.target.closest('.comment-btn');
+    if (commentBtn) {
+      e.preventDefault();
+      const userComment = prompt("Write a comment on this post:");
+      if (userComment && userComment.trim() !== "") {
+        const countSpan = commentBtn.querySelector('span');
+        let count = parseInt(countSpan.textContent);
+        countSpan.textContent = count + 1;
+        alert("Thanks! Your comment has been posted.");
+      }
+    }
+
+    // 3. SHARE BUTTON
+    const shareBtn = e.target.closest('.share-btn');
+    if (shareBtn) {
+      e.preventDefault();
+      const postTitle = shareBtn.closest('.feed-post').querySelector('.post-title').textContent;
+      
+      // Use native Web Share API if supported by browser/device
+      if (navigator.share) {
+        navigator.share({
+          title: 'Zuuri Homecares - ' + postTitle,
+          text: 'Check out this awesome service from Zuuri Homecares!',
+          url: window.location.href,
+        }).then(() => {
+          incrementShare(shareBtn);
+        }).catch(err => {
+          console.log('Share cancelled or failed', err);
+        });
+      } else {
+        // Fallback for desktop/unsupported browsers
+        alert("Link copied to clipboard! Share it with your friends.");
+        incrementShare(shareBtn);
+      }
+    }
+
+    // 4. IMAGE LIGHTBOX CLICK
+    if (e.target.classList.contains('post-image')) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightboxImg.src = e.target.src;
+      lightbox.classList.add('active');
+    }
+    
+    // 5. LIGHTBOX CLOSE
+    if (e.target.id === 'lightbox' || e.target.id === 'lightbox-close') {
+      document.getElementById('lightbox').classList.remove('active');
+    }
   });
+
+  function incrementShare(btn) {
+    const countSpan = btn.querySelector('span');
+    let count = parseInt(countSpan.textContent);
+    countSpan.textContent = count + 1;
+  }
 
   let ticking = false;
   track.addEventListener('scroll', () => { if (!ticking) { window.requestAnimationFrame(() => { updateScrollClasses(); ticking = false; }); ticking = true; } });
