@@ -940,80 +940,84 @@
       .about-text .section-title { text-align: center; }
       .about-text .section-title::after { left: 50%; transform: translateX(-50%); }
     }
-    
+
     /* Small Tablets & Large Mobile Devices */
     @media (max-width: 768px) {
-      body { font-size: 14px; }
-      .section { padding: 50px 0; }
-      .section-title { font-size: 1.7rem; margin-bottom: 30px; }
+      body { font-size: 13px; } 
+      .section { padding: 40px 0; }
+      .section-title { font-size: 1.5rem; margin-bottom: 25px; } 
       
-      header { flex-direction: column; gap: 10px; padding: 15px 5%; }
-      .header-logo-img { height: 100px; }
-      .header-slogan { max-width: 100%; text-align: center; font-size: 0.95rem; }
+      header { flex-direction: column; gap: 8px; padding: 12px 5%; }
+      .header-logo-img { height: 90px; }
+      .header-slogan { max-width: 100%; text-align: center; font-size: 0.85rem; } 
 
-      .carousel-wrapper { height: 460px; padding: 0 5px; }
-      .service-cover { flex: 0 0 280px; height: 380px; }
-      .cover-overlay { padding: 50px 20px 20px; }
-      .cover-overlay h3 { font-size: 1.5rem; }
-      .cover-overlay p { font-size: 0.9rem; margin-top: 10px; }
-      .card-wa-btn { width: 40px; height: 40px; font-size: 1.5rem; }
-      .read-more-badge { font-size: 0.75rem; padding: 6px 16px; margin-top: 10px; }
+      .carousel-wrapper { height: 420px; padding: 0 5px; }
+      .service-cover { flex: 0 0 260px; height: 350px; }
+      .cover-overlay { padding: 40px 15px 15px; }
+      .cover-overlay h3 { font-size: 1.3rem; } 
+      .cover-overlay p { font-size: 0.85rem; margin-top: 8px; } 
+      .card-wa-btn { width: 35px; height: 35px; font-size: 1.3rem; }
+      .read-more-badge { font-size: 0.7rem; padding: 5px 14px; margin-top: 8px; }
       
-      .about-features { grid-template-columns: 1fr; gap: 15px; }
-      .feature-card { padding: 20px 15px; }
-      .feature-card h4 { font-size: 1.1rem; }
+      .about-features { grid-template-columns: 1fr; gap: 12px; }
+      .feature-card { padding: 15px 12px; }
+      .feature-card h4 { font-size: 1rem; } 
+      .feature-card p { font-size: 0.85rem; } 
       
-      .reviews-grid { grid-template-columns: 1fr; gap: 20px; }
-      .review-card { padding: 20px; font-size: 0.9rem; }
+      .reviews-grid { grid-template-columns: 1fr; gap: 15px; }
+      .review-card { padding: 15px; font-size: 0.85rem; } 
+      .review-card h4 { font-size: 1rem; }
       
       .hero-buttons { flex-direction: column; }
-      .hero-buttons .hero-btn { width: 100%; justify-content: center; font-size: 1rem; padding: 10px 20px; }
+      .hero-buttons .hero-btn { width: 100%; justify-content: center; font-size: 0.9rem; padding: 8px 16px; } 
       
-      .floating-whatsapp { bottom: 20px; right: 20px; }
-      .whatsapp-button { width: 55px; height: 55px; font-size: 1.8rem; }
-      .whatsapp-text { font-size: 0.8rem; padding: 4px 12px; }
+      .floating-whatsapp { bottom: 15px; right: 15px; }
+      .whatsapp-button { width: 50px; height: 50px; font-size: 1.6rem; }
+      .whatsapp-text { font-size: 0.75rem; padding: 4px 10px; }
       
-      .modal-body { padding: 25px 15px; }
-      .post-actions { flex-wrap: wrap; justify-content: space-between; gap: 10px; padding: 12px 15px; }
-      .action-btn { font-size: 1.1rem; }
-      .action-btn span { font-size: 0.8rem; }
+      .modal-body { padding: 20px 12px; }
+      .post-actions { flex-wrap: wrap; justify-content: space-between; gap: 8px; padding: 10px 12px; }
+      .action-btn { font-size: 1rem; }
+      .action-btn span { font-size: 0.75rem; }
       
-      .post-title { font-size: 1.2rem; margin-bottom: 10px; }
-      .post-description { font-size: 0.9rem; }
-      .post-bullets li { font-size: 0.9rem; }
-      .post-author { font-size: 1rem; }
-      .post-time { font-size: 0.75rem; }
+      .post-title { font-size: 1.1rem; margin-bottom: 8px; }
+      .post-description { font-size: 0.85rem; }
+      .post-bullets li { font-size: 0.85rem; }
+      .post-author { font-size: 0.95rem; }
+      .post-time { font-size: 0.7rem; }
     }
 
     /* Small Mobile Devices (Phones) */
     @media (max-width: 480px) {
-      body { font-size: 13px; }
+      body { font-size: 12px; } 
       
-      .carousel-wrapper { height: 400px; }
-      .service-cover { flex: 0 0 240px; height: 340px; }
-      .cover-overlay h3 { font-size: 1.3rem; }
+      .carousel-wrapper { height: 360px; }
+      .service-cover { flex: 0 0 220px; height: 300px; }
+      .cover-overlay h3 { font-size: 1.1rem; } 
+      .cover-overlay p { font-size: 0.8rem; }
       
-      .header-logo-img { height: 80px; }
-      .header-slogan { font-size: 0.85rem; }
+      .header-logo-img { height: 70px; }
+      .header-slogan { font-size: 0.75rem; } 
       
-      .section-title { font-size: 1.5rem; }
+      .section-title { font-size: 1.3rem; } 
       
-      .modal-hero { padding: 30px 5%; min-height: 400px; height: 60vh; }
-      .hero-content h2 { font-size: 1.8rem; margin-bottom: 10px; }
-      .hero-tags span { font-size: 0.75rem; padding: 4px 10px; }
-      .hero-description { font-size: 0.95rem; margin-bottom: 15px; }
+      .modal-hero { padding: 20px 5%; min-height: 350px; height: 50vh; }
+      .hero-content h2 { font-size: 1.5rem; margin-bottom: 8px; } 
+      .hero-tags span { font-size: 0.7rem; padding: 3px 8px; }
+      .hero-description { font-size: 0.85rem; margin-bottom: 12px; } 
       
-      .post-title { font-size: 1.1rem; }
+      .post-title { font-size: 1rem; } 
       
-      .why-card { padding: 15px; }
-      .why-card i { font-size: 1.5rem; }
-      .why-card h5 { font-size: 0.95rem; }
+      .why-card { padding: 12px; }
+      .why-card i { font-size: 1.3rem; }
+      .why-card h5 { font-size: 0.85rem; } 
       
-      .faq-question { padding: 15px 20px; font-size: 0.95rem; }
-      .faq-item.active .faq-answer { padding: 15px 20px; font-size: 0.9rem; }
+      .faq-question { padding: 12px 15px; font-size: 0.85rem; } 
+      .faq-item.active .faq-answer { padding: 12px 15px; font-size: 0.8rem; } 
       
-      .footer-col h3 { font-size: 1.2rem; }
-      .footer-col p, .footer-col a { font-size: 0.9rem; }
+      .footer-col h3 { font-size: 1.1rem; margin-bottom: 15px; } 
+      .footer-col p, .footer-col a { font-size: 0.85rem; margin-bottom: 10px; } 
+      .footer-bottom { font-size: 0.8rem; }
     }
   </style>
 </head>
