@@ -2,505 +2,1538 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Zuuri Homecares | Professional Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  
+  <!-- ===== FAVICON ===== -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230f4d3a'%3E%3Cpath d='M12 3L2 9h3v8h14V9h3L12 3zm0 4.5c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm-4 7v-2c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2H8z'/%3E%3C/svg%3E">
+  <link rel="alternate icon" href="https://img.icons8.com/color/48/000000/house.png">
+  
+  <!-- ===== TITLE & PRIMARY META ===== -->
+  <title>Zuuri Homecares | Moving, Cleaning & Professional Home Services Nairobi & Kiambu</title>
+  <meta name="description" content="Zuuri Homecares offers top-tier moving, relocation, professional cleaning, deep cleaning, institution maintenance, and home care services in Nairobi and Kiambu. Trusted & eco-friendly. Call +254 719 300 421.">
+  <meta name="keywords" content="moving services Nairobi, relocation Kiambu, professional cleaners, house cleaning, office cleaning, deep cleaning, move-in cleaning, move-out cleaning, packing and unpacking, post-construction cleaning, event planning, pet care, garden maintenance, residential cleaners, commercial cleaners, Juja home care, Ruiru cleaners, Thika road cleaning, Kenyatta University environs, Zuuri Homecares, +254719300421">
+  <meta name="author" content="Zuuri Homecares">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://zuurihomecares.com">
+  
+  <!-- ===== ADDITIONAL SEO META ===== -->
+  <meta name="language" content="en">
+  <meta name="revisit-after" content="7 days">
+  <meta name="distribution" content="global">
+  <meta name="rating" content="general">
+  <meta name="geo.region" content="KE">
+  <meta name="geo.placename" content="Nairobi">
+  <meta name="geo.position" content="-1.286389;36.817223">
+  <meta name="ICBM" content="-1.286389, 36.817223">
+  
+  <!-- ===== OPEN GRAPH / FACEBOOK ===== -->
+  <meta property="og:title" content="Zuuri Homecares | Moving, Cleaning & Home Services">
+  <meta property="og:description" content="Reliable relocation, deep cleaning, and home care services in Nairobi & Kiambu. Call +254 719 300 421.">
+  <meta property="og:image" content="https://lh3.googleusercontent.com/d/1lasYaUtJ_p5aQLwlrZQG_TA5Kx2uw2Ly">
+  <meta property="og:url" content="https://zuurihomecares.com">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Zuuri Homecares">
+  <meta property="og:locale" content="en_KE">
+  
+  <!-- ===== TWITTER CARD ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Zuuri Homecares">
+  <meta name="twitter:description" content="Professional home experts offering moving, cleaning, and all home solutions. Contact +254 719 300 421.">
+  <meta name="twitter:image" content="https://lh3.googleusercontent.com/d/1lasYaUtJ_p5aQLwlrZQG_TA5Kx2uw2Ly">
+  <meta name="twitter:site" content="@zuurihomecare">
+  
+  <!-- ===== STYLES (unchanged, but included) ===== -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    /* ===== CORE STYLES (dark green & orange theme) ===== */
     :root {
       --primary-green: #0f4d3a;
       --primary-orange: #ff7a00;
       --light-gray: #f4f5f7;
       --dark-text: #2d3436;
       --white: #ffffff;
-      --transition: all 0.3s ease;
+      
+      /* New Dark Green & Orange Modal Theme Variables */
+      --modal-bg: #092e21; 
+      --card-bg: #0f402f; 
+      --item-bg: #145640; 
+      
+      --transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                    opacity 0.4s ease, 
+                    box-shadow 0.4s ease,
+                    background-color 0.4s ease;
     }
+    
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    
     body {
       font-family: 'Poppins', sans-serif;
       color: var(--dark-text);
       background-color: #ffffff;
       scroll-behavior: smooth;
       overflow-x: hidden;
+      font-size: 16px; 
+      line-height: 1.6;
     }
+    
     h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-    .section { padding: 60px 0; }
-    #services { padding-top: 10px; }
-    .section-title { text-align: center; color: var(--primary-green); font-size: 2.2rem; margin-bottom: 40px; font-weight: 800;}
-
-    .btn-primary {
-      display: inline-block;
-      padding: 15px 28px;
-      border-radius: 5px;
-      font-weight: 600;
-      cursor: pointer;
-      border: none;
-      transition: var(--transition);
-      text-decoration: none;
-      font-family: 'Montserrat', sans-serif;
-      text-align: center;
-      background: var(--primary-orange); 
-      color: var(--white);
-      width: 100%;
-      font-size: 1.1rem;
+    .section { padding: 90px 0; }
+    .bg-light { background-color: var(--light-gray); }
+    
+    .section-title { 
+      text-align: center; 
+      color: var(--primary-green); 
+      font-size: 2.5rem; 
+      margin-bottom: 50px; 
+      font-weight: 800;
+      position: relative;
     }
-    .btn-primary:hover { background: #e66a00; transform: translateY(-2px); }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background-color: var(--primary-orange);
+      border-radius: 2px;
+    }
 
+    /* HEADER */
     header {
-      display: flex; align-items: center; justify-content: flex-start;
-      padding: 30px 50px 0px;
+      display: flex; 
+      flex-direction: row; 
+      justify-content: space-between; 
+      align-items: center; 
+      padding: 10px 5%;
       background: #ffffff;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
     }
     .header-logo-img { 
-      height: 120px; 
+      height: 180px;
       width: auto; 
-      max-width: 300px; 
       object-fit: contain; 
-      border-radius: 0;
-      background-color: #ffffff;
-      padding: 0;
-      box-shadow: none;
+    }
+    .header-slogan {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary-green);
+      text-align: right;
+      max-width: 50%;
+      line-height: 1.4;
     }
 
-    /* Carousel */
-    .carousel-wrapper { position: relative; padding: 10px 0 30px; }
-    .carousel-track { 
-      display: flex; 
-      gap: 30px; 
-      overflow-x: auto; 
-      scroll-snap-type: x mandatory; 
-      -webkit-overflow-scrolling: touch; 
-      padding-bottom: 20px; 
-      scroll-behavior: smooth;
+    /* SERVICES SECTION */
+    #services {
+      position: relative;
+      background-image: url('https://lengocleaning.co.ke/wp-content/uploads/2025/07/lengo-office-Deep-Cleaning-Services-In-Nairobi.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      overflow: hidden;
     }
-    .carousel-track::-webkit-scrollbar { height: 6px; }
-    .carousel-track::-webkit-scrollbar-track { background: transparent; margin: 0 20vw; }
-    .carousel-track::-webkit-scrollbar-thumb { background: #ccc; border-radius: 10px; cursor: pointer;}
     
-    /* STRICT PORTRAIT SLIDES (approx 9:16 ratio) */
+    #services::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(
+        to bottom, 
+        rgba(255, 255, 255, 1) 0%, 
+        rgba(255, 255, 255, 0.9) 20%, 
+        rgba(15, 77, 58, 0.7) 55%, 
+        rgba(15, 77, 58, 0.9) 80%,
+        rgba(15, 77, 58, 1) 100%
+      );
+      z-index: 1;
+      pointer-events: none;
+    }
+    .floating-icon {
+      position: absolute;
+      font-size: 2rem;
+      color: rgba(255,122,0,0.1);
+      z-index: 1;
+      pointer-events: none;
+      animation: float 8s infinite ease-in-out;
+    }
+    .floating-icon:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+    .floating-icon:nth-child(2) { bottom: 15%; right: 8%; animation-delay: 2s; }
+    .floating-icon:nth-child(3) { top: 30%; right: 15%; animation-delay: 4s; }
+    .floating-icon:nth-child(4) { bottom: 25%; left: 10%; animation-delay: 1s; }
+    .floating-icon:nth-child(5) { top: 50%; left: 20%; animation-delay: 3s; }
+    .floating-icon:nth-child(6) { bottom: 40%; right: 25%; animation-delay: 5s; }
+    @keyframes float {
+      0% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(10deg); }
+      100% { transform: translateY(0px) rotate(0deg); }
+    }
+    
+    #services .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* 3D CAROUSEL - enhanced Netflix style + redesigned cards */
+    .carousel-wrapper { 
+      position: relative; 
+      height: 650px;
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
+    
+    .carousel-track { 
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 0 calc(50% - 200px);
+      gap: 25px;
+      perspective: 1200px; 
+      -ms-overflow-style: none;  
+      scrollbar-width: none;  
+      -webkit-overflow-scrolling: touch; 
+    }
+    .carousel-track::-webkit-scrollbar { display: none; }
+    
     .service-cover {
-      min-width: 300px; 
-      max-width: 300px;
-      height: 533px;
-      border-radius: 12px;
-      cursor: pointer;
+      flex: 0 0 400px;
+      height: 550px;
+      border-radius: 24px;
+      scroll-snap-align: center; 
       position: relative;
       background-size: cover;
       background-position: center;
-      scroll-snap-align: center;
-      flex-shrink: 0;
       overflow: hidden;
       transition: var(--transition);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      text-decoration: none;
+      display: block;
+      opacity: 0.6;
+      transform: scale(0.85) rotateY(-15deg) translateZ(-30px);
+      z-index: 1;
+      will-change: transform, opacity; 
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      filter: brightness(0.9);
+      border: 1px solid rgba(255,122,0,0.1);
     }
-    .service-cover:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
+
+    .service-cover.active {
+      opacity: 1;
+      transform: scale(1.1) rotateY(0deg) translateZ(50px); 
+      z-index: 3;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.6), 0 0 30px rgba(255,122,0,0.5);
+      filter: brightness(1.05);
+      border-color: var(--primary-orange);
+    }
+
+    .service-cover.prev { opacity: 0.6; transform: scale(0.85) rotateY(15deg) translateZ(-30px); z-index: 1; }
+    .service-cover.next { opacity: 0.6; transform: scale(0.85) rotateY(-15deg) translateZ(-30px); z-index: 1; }
     
     .cover-overlay {
       position: absolute;
       bottom: 0; left: 0; width: 100%;
-      padding: 80px 20px 25px; 
-      background: linear-gradient(to top, rgba(15, 77, 58, 0.98) 0%, rgba(15, 77, 58, 0.8) 50%, transparent 100%);
+      padding: 80px 25px 30px; 
+      background: linear-gradient(to top, rgba(9,46,33,0.98) 0%, rgba(9,46,33,0.85) 60%, transparent 100%);
+      backdrop-filter: blur(3px);
       color: var(--white);
       text-align: left;
+      transition: opacity 0.4s ease;
+      border-top: 2px solid rgba(255,122,0,0.3);
     }
-    .cover-overlay h3 { font-size: 1.6rem; margin-bottom: 10px; color: var(--white); line-height: 1.3; font-weight: 700;}
-    .cover-overlay p { font-size: 0.95rem; font-weight: 300; opacity: 0.9; line-height: 1.5;}
-
-    /* Reviews */
-    .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-    .review-card { background: transparent; padding: 30px; border-radius: 10px; border: none; }
-    .stars { color: #f1c40f; margin-bottom: 15px; }
-
-    /* Contact */
-    .contact-wrapper { display: flex; justify-content: center; }
-    .contact-info { background: transparent; padding: 40px; border: none; border-radius: 10px; text-align: center; width: 100%; max-width: 600px; }
-    .social-icons { display: flex; justify-content: center; gap: 15px; margin: 25px 0; }
-    .social-icons a { width: 45px; height: 45px; border: 1px solid var(--primary-green); display: flex; align-items: center; justify-content: center; border-radius: 50%; color: var(--primary-green); transition: var(--transition); text-decoration: none;}
-    .social-icons a:hover { background: var(--primary-green); color: var(--white); }
-
-    /* Modals */
-    .modal-overlay {
-      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.7); backdrop-filter: blur(5px);
-      display: flex; justify-content: center; align-items: center;
-      z-index: 2000; opacity: 0; visibility: hidden; transition: var(--transition);
+    
+    .service-cover:not(.active) .cover-overlay { opacity: 0; }
+    
+    .cover-overlay h3 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 5px;
+      line-height: 1.2;
+      color: white;
+      text-transform: uppercase;
+      position: relative;
+      display: inline-block;
     }
-    .modal-overlay.active { opacity: 1; visibility: visible; }
-    .modal-content {
-      background: var(--white); width: 90%; max-width: 900px;
-      max-height: 90vh; overflow-y: auto; border-radius: 10px;
-      position: relative; transform: translateY(50px); transition: var(--transition);
+    
+    .cover-overlay h3::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 50px;
+      height: 4px;
+      background: var(--primary-orange);
+      border-radius: 2px;
     }
-    .modal-overlay.active .modal-content { transform: translateY(0); }
-    .close-btn { position: absolute; top: 20px; right: 25px; font-size: 1.5rem; color: var(--dark-text); cursor: pointer; z-index: 10; }
+    
+    .cover-overlay p {
+      font-size: 1rem;
+      margin-top: 20px;
+      font-weight: 300;
+      opacity: 0.95;
+      line-height: 1.5;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    }
+    
+    /* WhatsApp button inside card overlay */
+    .card-wa-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #25D366;
+      color: white;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      font-size: 1.8rem;
+      margin-top: 15px;
+      margin-right: 10px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      border: 2px solid white;
+      text-decoration: none;
+    }
+    .card-wa-btn:hover {
+      transform: scale(1.15);
+      background: #20b859;
+      box-shadow: 0 8px 15px rgba(37, 211, 102, 0.5);
+    }
+    .read-more-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 15px;
+      padding: 8px 22px;
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+    }
+    .service-cover.active .read-more-badge {
+      background: var(--primary-orange);
+      border-color: var(--primary-orange);
+      color: white;
+      box-shadow: 0 5px 15px rgba(255,122,0,0.4);
+    }
+    .read-more-badge i {
+      transition: transform 0.2s;
+    }
+    .service-cover.active .read-more-badge:hover i {
+      transform: translateX(5px);
+    }
+    /* Flex container for buttons */
+    .cover-buttons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
 
-    /* Enhanced Gallery inside modal - Also strictly Portrait */
-    .service-gallery {
+    /* ABOUT SECTION */
+    .about-section {
+      background-color: var(--primary-green);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    .about-section::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(255,122,0,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+    .about-text .section-title {
+      color: var(--primary-orange);
+      text-align: left;
+      margin-bottom: 30px;
+    }
+    .about-text .section-title::after {
+      left: 0;
+      transform: none;
+    }
+    .about-text p {
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+      color: #e2e8f0; 
+      line-height: 1.8;
+    }
+    .about-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+    .feature-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-top: 4px solid var(--primary-orange);
+      padding: 30px 20px;
+      border-radius: 16px;
+      text-align: center;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      backdrop-filter: blur(10px);
+    }
+    .feature-card:hover {
+      transform: translateY(-12px);
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+      border-color: rgba(255, 122, 0, 0.5);
+    }
+    .feature-card i {
+      font-size: 2.5rem;
+      color: var(--primary-orange);
+      margin-bottom: 15px;
+      transition: transform 0.3s ease;
+    }
+    .feature-card:hover i { transform: scale(1.1); }
+    .feature-card h4 {
+      font-size: 1.2rem;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .feature-card p {
+      font-size: 0.95rem;
+      color: #cbd5e1;
+    }
+
+    /* REVIEWS */
+    .reviews-header { display: flex; flex-direction: column; align-items: center; margin-bottom: 40px; text-align: center; }
+    .reviews-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 900px; margin: 0 auto; }
+    .review-card { background: var(--white); padding: 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.06); font-size: 1rem; border: 1px solid #f1f1f1; transition: transform 0.3s ease; }
+    .review-card:hover { transform: translateY(-5px); border-color: var(--primary-orange); }
+    .review-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+    .stars { color: #fbbc05; font-size: 1.15rem; display: flex; gap: 2px;} 
+    .google-badge { display: flex; align-items: center; gap: 6px; }
+    .google-badge img { width: 22px; height: 22px; }
+    .review-card h4 { font-size: 1.15rem; margin-top: 15px; color: #202124;}
+    .review-date { font-size: 0.9rem; color: #888; margin-top: 5px; display: block; }
+
+    /* FOOTER */
+    footer { position: relative; background: linear-gradient(to bottom, #15634b 0%, #0f4d3a 100%); color: var(--white); padding: 100px 0 20px; }
+    .footer-wave { position: absolute; top: 0; left: 0; width: 100%; height: 60px; }
+    .footer-wave svg { width: 100%; height: 100%; }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
+    .footer-col h3 { color: var(--primary-orange); font-size: 1.4rem; margin-bottom: 20px; font-weight: 700; }
+    .footer-col p, .footer-col a { color: #e0e0e0; font-size: 1rem; margin-bottom: 15px; text-decoration: none; display: flex; align-items: center; transition: color 0.3s ease;}
+    .footer-col a:hover { color: var(--primary-orange); transform: translateX(5px); }
+    .footer-col i { margin-right: 15px; width: 20px; text-align: center; color: var(--primary-orange); font-size: 1.1rem; }
+    .footer-socials { display: flex; gap: 15px; margin-top: 20px; }
+    .footer-socials a { 
+      width: 50px; height: 50px; background: rgba(255,255,255,0.05); 
+      border: 1px solid rgba(255,122,0,0.3); color: var(--white); 
+      display: flex; justify-content: center; align-items: center; 
+      font-size: 1.2rem; margin: 0; 
+      border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+      animation: morphShape 4s ease-in-out infinite alternate;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    }
+    @keyframes morphShape {
+      0% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+      100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+    }
+    .footer-socials a:hover { 
+      background: var(--primary-orange); border-color: var(--primary-orange); 
+      color: var(--white); transform: translateY(-8px) scale(1.1); 
+      box-shadow: 0 10px 20px rgba(255, 122, 0, 0.4);
+      border-radius: 12px; animation-play-state: paused; 
+    }
+    .footer-bottom { text-align: center; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.95rem; color: rgba(255,255,255,0.6); }
+
+    /* Floating WhatsApp Button (round, bottom right) */
+    .floating-whatsapp {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .whatsapp-button {
+      background: #25D366;
+      color: white;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2.5rem;
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      text-decoration: none;
+      animation: pulse 2s infinite;
+    }
+    .whatsapp-button:hover {
+      transform: scale(1.15);
+      box-shadow: 0 15px 35px rgba(37, 211, 102, 0.6);
+    }
+    .whatsapp-text {
+      background: var(--primary-green);
+      color: white;
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    /* ========== MODAL STYLES (DARK GREEN & ORANGE ENHANCED) ========== */
+    .service-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--modal-bg);
+      z-index: 10000;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      color: #fff;
+    }
+    .service-modal.active { display: block; }
+
+    .modal-close {
+      position: fixed;
+      top: 20px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: rgba(0,0,0,0.7);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 2px solid rgba(255,255,255,0.2);
+      z-index: 10010;
+      backdrop-filter: blur(5px);
+    }
+    .modal-close:hover {
+      background: var(--primary-orange);
+      transform: scale(1.1) rotate(90deg);
+      border-color: var(--primary-orange);
+    }
+
+    .modal-hero {
+      position: relative;
+      height: 70vh;
+      min-height: 500px;
+      background-size: cover;
+      background-position: center 30%;
+      display: flex;
+      align-items: flex-end;
+      padding: 40px 5%;
+      color: white;
+    }
+    .modal-hero::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(to top, var(--modal-bg) 0%, transparent 50%, rgba(0,0,0,0.3) 100%);
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      animation: fadeUp 0.8s ease;
+    }
+    .hero-content h2 {
+      font-size: 4rem;
+      font-weight: 800;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    }
+    .hero-tags {
       display: flex;
       gap: 15px;
-      overflow-x: auto;
-      padding: 20px 0;
       margin-bottom: 20px;
-      scroll-snap-type: x mandatory;
+      font-weight: 600;
+      flex-wrap: wrap;
     }
-    .service-gallery img {
-      width: 220px;
-      height: 330px;
-      object-fit: cover;
-      border-radius: 8px;
-      scroll-snap-align: start;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      flex-shrink: 0;
+    .hero-tags span {
+      background: rgba(255,122,0,0.9);
+      padding: 5px 15px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      text-transform: uppercase;
     }
-    
-    .service-description {
-      background: var(--light-gray);
-      padding: 20px;
-      border-radius: 8px;
+    .hero-description {
+      font-size: 1.3rem;
       margin-bottom: 25px;
-      line-height: 1.7;
-      color: #333;
+      line-height: 1.5;
+      max-width: 600px;
+      text-shadow: 1px 1px 5px black;
     }
-    .service-details-list { margin-top: 15px; padding-left: 20px; line-height: 1.8; color: #444; font-size: 1rem; }
-    .service-details-list li { margin-bottom: 8px; }
+    .hero-buttons {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .hero-btn {
+      padding: 12px 30px;
+      border-radius: 5px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.2rem;
+    }
+    .hero-btn.primary {
+      background: var(--primary-orange);
+      color: white;
+    }
+    .hero-btn.primary:hover {
+      background: #e06e00;
+      transform: scale(1.05);
+    }
+    .hero-btn.secondary {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+    .hero-btn.secondary:hover {
+      background: rgba(255,255,255,0.3);
+    }
 
-    /* Forms */
-    .form-group { margin-bottom: 20px; text-align: left; }
-    .form-group label { display: block; margin-bottom: 8px; font-weight: 500; color: var(--primary-green); }
-    .form-control { width: 100%; padding: 12px 15px; border: 1px solid #ccc; border-radius: 5px; font-family: 'Poppins', sans-serif; font-size: 1rem; background: transparent; }
-    .form-control:focus { outline: none; border-color: var(--primary-orange); }
-    
-    @media (max-width: 950px) {
-      /* Mobile Portrait Settings */
-      .service-cover { min-width: 260px; max-width: 260px; height: 460px; }
-      header { padding: 15px 20px 0px; justify-content: flex-start; } 
-      .header-logo-img { height: 100px; }
-      .cover-overlay h3 { font-size: 1.4rem; }
-      .form-grid { grid-template-columns: 1fr !important; }
+    .modal-body {
+      padding: 40px 5%;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    /* ===== FEED POST STYLES ===== */
+    .feed-posts {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .feed-post {
+      background: var(--card-bg);
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255,122,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .feed-post:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 30px rgba(0,0,0,0.4);
+      border-color: var(--primary-orange);
+    }
+    .post-header {
+      display: flex;
+      align-items: center;
+      padding: 15px 20px;
+      gap: 12px;
+      background: rgba(0,0,0,0.2);
+    }
+    .post-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--primary-orange);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: white;
+      border: 2px solid white;
+    }
+    .post-author-info {
+      flex: 1;
+    }
+    .post-author {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+    .verified-badge {
+      color: var(--primary-orange);
+      font-size: 1rem;
+    }
+    .post-time {
+      font-size: 0.85rem;
+      color: #aaa;
+    }
+    .post-image {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      display: block;
+      border-bottom: 1px solid rgba(255,122,0,0.2);
+    }
+    .post-actions {
+      display: flex;
+      gap: 20px;
+      padding: 15px 20px;
+      background: rgba(0,0,0,0.1);
+      border-bottom: 1px solid rgba(255,122,0,0.1);
+    }
+    .action-btn {
+      background: none;
+      border: none;
+      color: #ddd;
+      font-size: 1.3rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.2s;
+    }
+    .action-btn.liked i {
+      color: #ff3040;
+      font-weight: 900;
+    }
+    .action-btn i {
+      transition: transform 0.2s;
+    }
+    .action-btn:hover i {
+      transform: scale(1.1);
+    }
+    .action-btn span {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+    .post-content {
+      padding: 20px;
+    }
+    .post-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary-orange);
+      margin-bottom: 15px;
+    }
+    .post-description {
+      color: #e0e0e0;
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+    .post-bullets {
+      list-style: none;
+    }
+    .post-bullets li {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: #d1d5db;
+    }
+    .post-bullets i {
+      color: var(--primary-orange);
+      font-size: 1.1rem;
+      margin-top: 3px;
+    }
+
+    /* Why choose us cards (keep as is) */
+    .why-us-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+    .why-card {
+      background: var(--card-bg);
+      padding: 20px;
+      border-radius: 16px;
+      text-align: center;
+      border: 1px solid rgba(255,122,0,0.2);
+      transition: 0.3s;
+    }
+    .why-card:hover {
+      border-color: var(--primary-orange);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+    .why-card i {
+      font-size: 2rem;
+      color: var(--primary-orange);
+      margin-bottom: 10px;
+    }
+    .why-card h5 {
+      color: white;
+      font-size: 1.1rem;
+    }
+
+    .conclusion-text {
+      background: var(--card-bg);
+      padding: 30px;
+      border-radius: 20px;
+      margin: 40px 0;
+      border-left: 6px solid var(--primary-orange);
+      font-style: italic;
+      color: #e5e7eb;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+    .conclusion-text strong {
+      color: var(--primary-orange);
+    }
+
+    /* FAQ accordion (inside modals) */
+    .faq-item {
+      background: var(--card-bg);
+      margin-bottom: 15px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 122, 0, 0.1);
+    }
+    .faq-question {
+      padding: 18px 25px;
+      background: var(--item-bg);
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-left: 4px solid var(--primary-orange);
+    }
+    .faq-question i { transition: transform 0.3s; color: var(--primary-orange); }
+    .faq-answer {
+      padding: 0 25px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      background: var(--card-bg);
+      color: #d1d5db;
+    }
+    .faq-item.active .faq-answer {
+      padding: 20px 25px;
+      max-height: 300px;
+    }
+    .faq-item.active .faq-question i { transform: rotate(90deg); }
+
+    .gallery-grid-wiki {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 15px;
+      margin: 30px 0;
+    }
+    .gallery-grid-wiki img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 2px solid rgba(255, 122, 0, 0.3);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      transition: 0.3s;
+    }
+    .gallery-grid-wiki img:hover {
+      transform: scale(1.03);
+      border-color: var(--primary-orange);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 900px) {
+      .hero-content h2 { font-size: 2.5rem; }
+      .modal-hero { height: 50vh; }
+    }
+    @media (max-width: 768px) {
+      .hero-buttons { flex-direction: column; }
+      .hero-buttons .hero-btn { width: 100%; justify-content: center; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="https://lh3.googleusercontent.com/d/1lasYaUtJ_p5aQLwlrZQG_TA5Kx2uw2Ly" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/House_icon.svg/512px-House_icon.svg.png'" alt="Zuuri Homecares Logo" class="header-logo-img">
-  </header>
 
-  <section id="services" class="section">
-    <div class="container">
-      <h2 class="section-title">Our Service Categories</h2>
-      <div class="carousel-wrapper">
-        <div class="carousel-track" id="carouselTrack"></div>
+<header>
+  <img src="https://lh3.googleusercontent.com/d/1lasYaUtJ_p5aQLwlrZQG_TA5Kx2uw2Ly" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/House_icon.svg/512px-House_icon.svg.png'" alt="Zuuri Homecares Logo" class="header-logo-img">
+  <div class="header-slogan">Professional Home Experts Offering All Home Solutions</div>
+</header>
+
+<section id="services" class="section">
+  <div class="floating-icon"><i class="fas fa-broom"></i></div>
+  <div class="floating-icon"><i class="fas fa-seedling"></i></div>
+  <div class="floating-icon"><i class="fas fa-calendar-check"></i></div>
+  <div class="floating-icon"><i class="fas fa-hand-sparkles"></i></div>
+  <div class="floating-icon"><i class="fas fa-dog"></i></div>
+  <div class="floating-icon"><i class="fas fa-tree"></i></div>
+  <div class="container">
+    <h2 class="section-title">Our Service Categories</h2>
+    <div class="carousel-wrapper">
+      <div class="carousel-track" id="carouselTrack"></div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section about-section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <h2 class="section-title">About Zuuri Homecares</h2>
+        <p>Zuuri HomeCares is a professional home care and support services company dedicated to making homes, institutions, and events cleaner, more organized, and more comfortable. Our mission is to provide reliable, high-quality services delivered by a team of trained young professionals, while also outsourcing specialized premium services to trusted experts when necessary.</p>
+        <p>We focus on helping families, apartments, offices, and organizations maintain environments that are clean, efficient, and stress-free. Zuuri HomeCares offers services under three main categories.</p>
+        <p style="font-weight: 600; color: var(--primary-orange); margin-top: 25px; font-size: 1.3rem; text-transform: uppercase; letter-spacing: 1px;">Care. Comfort. Clean.</p>
+      </div>
+      <div class="about-features">
+        <div class="feature-card"><i class="fas fa-shield-alt"></i><h4>Trusted & Safe</h4><p>Fully vetted professionals ensuring your property is in safe hands.</p></div>
+        <div class="feature-card"><i class="fas fa-gem"></i><h4>Premium Quality</h4><p>We use top-tier equipment and methods for flawless results.</p></div>
+        <div class="feature-card"><i class="fas fa-clock"></i><h4>Timely Service</h4><p>Punctual and efficient project completion, every single time.</p></div>
+        <div class="feature-card"><i class="fas fa-headset"></i><h4>24/7 Support</h4><p>Dedicated customer care ready to assist you around the clock.</p></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="reviews" class="section">
-    <div class="container">
-      <h2 class="section-title">What Our Clients Say</h2>
-      <div class="reviews-grid">
-        <div class="review-card">
-          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p>"Zuuri Homecares transformed my office space! The cleaning was thorough and professional."</p>
-          <h4 style="color: var(--primary-green);">- Sarah K.</h4>
-        </div>
-        <div class="review-card">
-          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p>"Their handyman service was incredibly fast. Fixed my plumbing issues in no time. Highly recommended."</p>
-          <h4 style="color: var(--primary-green);">- David M.</h4>
-        </div>
+<section id="reviews" class="section bg-light">
+  <div class="container">
+    <div class="reviews-header">
+      <h2 class="section-title" style="margin-bottom: 10px;">Recent Client Reviews</h2>
+      <p style="color: #666; margin-bottom: 20px;">See what our latest clients have to say about our services.</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-card-header"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><div class="google-badge"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google"></div></div>
+        <p>"Zuuri Homecares transformed my office space! The cleaning was incredibly thorough and the staff was very professional. Will definitely hire them again."</p>
+        <h4>Sarah Karai.</h4><span class="review-date">Posted on Google</span>
+      </div>
+      <div class="review-card">
+        <div class="review-card-header"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><div class="google-badge"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google"></div></div>
+        <p>"Their handyman service was incredibly fast. Fixed my plumbing issues in no time before our family event. Highly recommended."</p>
+        <h4>David Owiti.</h4><span class="review-date">Posted on Google</span>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="contact" class="section">
-    <div class="container contact-wrapper">
-      <div class="contact-info">
-        <h3 style="color: var(--primary-orange); font-size: 1.8rem; margin-bottom: 20px;">Get in Touch</h3>
-        <p style="margin-bottom: 15px; font-size: 1.1rem;"><i class="fas fa-phone-alt" style="color: var(--primary-green); margin-right: 10px;"></i> 0719 300 421</p>
-        <p style="margin-bottom: 15px; font-size: 1.1rem;"><i class="fas fa-envelope" style="color: var(--primary-green); margin-right: 10px;"></i> hello@zuurihomecares.co.ke</p>
-        <p style="margin-bottom: 15px; font-size: 1.1rem;"><i class="fas fa-map-marker-alt" style="color: var(--primary-green); margin-right: 10px;"></i> Juja City Mall, Nairobi</p>
-        
-        <div class="social-icons">
+<footer id="contact">
+  <div class="footer-wave"><svg preserveAspectRatio="none" viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg"><path fill="#f4f5f7" d="M0,0 C480,100 960,100 1440,0 L1440,0 L0,0 Z"></path></svg></div>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" style="height: 65px; filter: brightness(0) invert(1); margin-bottom: 25px;"><g transform="translate(20, 30)"><path d="M70 10 L15 65 L30 65 L30 130 L110 130 L110 65 L125 65 Z" fill="none" stroke="#0f4d3a" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/><path d="M70 50 C 50 30 35 50 50 70 L70 95 L90 70 C 105 50 90 30 70 50 Z" fill="#ff7a00"/></g><text x="170" y="115" font-family="'Montserrat', sans-serif" font-weight="800" font-size="72" fill="#0f4d3a" letter-spacing="-2">ZUURI</text><text x="175" y="150" font-family="'Poppins', sans-serif" font-weight="600" font-size="22" fill="#ff7a00" letter-spacing="8">HOMECARES</text></svg>
+        <p style="font-size: 1.05rem; line-height: 1.6;">Professional home experts offering all Home solutions under one roof. Your trusted partner in property care.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Contact Us</h3>
+        <p><i class="fas fa-phone-alt"></i> +254 719 300 421</p>
+        <p><i class="fas fa-envelope"></i> zuurihomecares@gmail.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> Juja City Mall, Kiambu</p>
+      </div>
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <p>Stay updated with our latest offers and home care tips.</p>
+        <div class="footer-socials">
           <a href="#"><i class="fab fa-facebook-f"></i></a>
           <a href="#"><i class="fab fa-instagram"></i></a>
           <a href="#"><i class="fab fa-tiktok"></i></a>
           <a href="#"><i class="fab fa-whatsapp"></i></a>
         </div>
-        <p style="font-weight: bold; color: var(--primary-green); font-size: 1.2rem;">@zuurihomecare</p>
+        <p style="margin-top: 15px; font-weight: bold; color: var(--primary-orange); letter-spacing: 0.5px;">@zuurihomecare</p>
       </div>
     </div>
-  </section>
+    <div class="footer-bottom">© 2026 Zuuri Homecares. All Rights Reserved.</div>
+  </div>
+</footer>
 
-  <div class="modal-overlay" id="serviceModal">
-    <div class="modal-content">
-      <span class="close-btn" onclick="closeServiceModal()"><i class="fas fa-times"></i></span>
-      <div style="background: var(--light-gray); padding: 30px; text-align: center; border-bottom: 1px solid #ddd;">
-        <h2 id="modalTitle" style="color: var(--primary-green); font-size: 2rem;">Service Name</h2>
-      </div>
-      <div style="padding: 30px;">
-        <div id="modalGallery" class="service-gallery"></div>
-        <div id="modalDetailedDesc" class="service-description"></div>
-        
-        <div style="margin-bottom: 30px;">
-          <h3 style="color: var(--primary-orange); margin-bottom: 10px; font-size: 1.2rem;"><i class="fas fa-list-check"></i> Services Included:</h3>
-          <ul id="modalIncluded" class="service-details-list"></ul>
-        </div>
-        
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 40px;" class="form-grid">
-          <div>
-            <h4 style="color: var(--primary-green); font-size: 1.1rem;"><i class="fas fa-users" style="color: var(--primary-orange)"></i> Target Clients</h4>
-            <p id="modalTarget" style="margin-top: 10px; line-height: 1.6; color: #555;"></p>
-          </div>
-          <div>
-            <h4 style="color: var(--primary-green); font-size: 1.1rem;"><i class="fas fa-check-circle" style="color: var(--primary-orange)"></i> Benefits</h4>
-            <p id="modalBenefits" style="margin-top: 10px; line-height: 1.6; color: #555;"></p>
-          </div>
-        </div>
+<div class="floating-whatsapp">
+  <a href="https://wa.me/message/CX6MSYKVWG3WA1" target="_blank" class="whatsapp-button"><i class="fab fa-whatsapp"></i></a>
+  <span class="whatsapp-text">Book Now</span>
+</div>
 
-        <button class="btn-primary" onclick="closeServiceModal(); openBookingModal(document.getElementById('modalTitle').innerText)">Book This Service</button>
+<!-- ========== MODALS WITH FEED POSTS ========== -->
+
+<!-- HomeCare Modal -->
+<div id="homecareModal" class="service-modal">
+  <div class="modal-close" onclick="closeAllModals()"><i class="fas fa-times"></i></div>
+  <div class="modal-hero" style="background-image: linear-gradient(to right, rgba(0,0,0,0.7), transparent), url('https://www.pluspoint.ae/uploads/Blogs/blog_1719835208.webp');">
+    <div class="hero-content">
+      <h2>HomeCare Services</h2>
+      <div class="hero-tags"><span>Daily chores</span><span>Deep cleaning</span><span>Organization</span><span>Garden</span><span>Pet care</span></div>
+      <p class="hero-description">Our HomeCare Services focus on managing everyday household needs and ensuring homes remain clean, comfortable, and well organized.</p>
+      <div class="hero-buttons">
+        <a href="https://wa.me/message/CX6MSYKVWG3WA1" target="_blank" class="hero-btn primary"><i class="fab fa-whatsapp"></i> Book now</a>
       </div>
     </div>
   </div>
+  <div class="modal-body">
+    <!-- Why Choose Us section remains as grid -->
+    <h3 class="section-title-light">Why Choose Zuuri HomeCare?</h3>
+    <div class="why-us-grid">
+      <div class="why-card"><i class="fas fa-user-check"></i><h5>Vetted Professionals</h5></div>
+      <div class="why-card"><i class="fas fa-leaf"></i><h5>Eco-Friendly Products</h5></div>
+      <div class="why-card"><i class="fas fa-clock"></i><h5>Flexible Scheduling</h5></div>
+      <div class="why-card"><i class="fas fa-shield-alt"></i><h5>Insured & Bonded</h5></div>
+    </div>
 
-  <div class="modal-overlay" id="bookingModal">
-    <div class="modal-content">
-      <span class="close-btn" onclick="closeBookingModal()"><i class="fas fa-times"></i></span>
-      <div style="padding: 40px;">
-        <h2 style="color: var(--primary-green); text-align: center; margin-bottom: 10px;">Book a Service</h2>
-        <p style="text-align: center; color: #666; margin-bottom: 30px;">Fill out the form below and our team will get back to you.</p>
-        
-        <form id="bookingForm" onsubmit="submitBooking(event)">
-          <div class="form-group">
-            <label>Full Name</label>
-            <input type="text" class="form-control" name="clientName" required>
-          </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;" class="form-grid">
-            <div class="form-group">
-              <label>Phone Number</label>
-              <input type="tel" class="form-control" name="phone" placeholder="0707 113 265" required>
+    <!-- Feed Posts Section -->
+    <div class="feed-posts">
+      <!-- Post 1: Household Chore Management -->
+      <div class="feed-post">
+        <div class="post-header">
+          <div class="post-avatar"><i class="fas fa-broom"></i></div>
+          <div class="post-author-info">
+            <div class="post-author">
+              Zuuri HomeCares <span class="verified-badge"><i class="fas fa-check-circle"></i></span>
             </div>
-            <div class="form-group">
-              <label>Email Address</label>
-              <input type="email" class="form-control" name="email" required>
+            <div class="post-time">2 hours ago · HomeCare</div>
+          </div>
+        </div>
+        <img src="https://images.pexels.com/photos/4107278/pexels-photo-4107278.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Household Chores" class="post-image">
+        <div class="post-actions">
+          <button class="action-btn like-btn"><i class="far fa-heart"></i> <span>24</span></button>
+          <button class="action-btn"><i class="far fa-comment"></i> <span>5</span></button>
+          <button class="action-btn"><i class="far fa-share-square"></i> <span>3</span></button>
+        </div>
+        <div class="post-content">
+          <h4 class="post-title">Household Chore Management</h4>
+          <p class="post-description">We handle regular home chores that keep homes functioning smoothly. Daily, weekly, or monthly plans.</p>
+          <ul class="post-bullets">
+            <li><i class="fas fa-check-circle"></i> Sweeping, mopping, and dusting</li>
+            <li><i class="fas fa-check-circle"></i> Laundry and ironing</li>
+            <li><i class="fas fa-check-circle"></i> Dishwashing and kitchen cleaning</li>
+            <li><i class="fas fa-check-circle"></i> Bed making and linen management</li>
+            <li><i class="fas fa-check-circle"></i> General house organization</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Post 2: Professional Cleaning Services -->
+      <div class="feed-post">
+        <div class="post-header">
+          <div class="post-avatar"><i class="fas fa-spray-can-sparkles"></i></div>
+          <div class="post-author-info">
+            <div class="post-author">
+              Zuuri HomeCares <span class="verified-badge"><i class="fas fa-check-circle"></i></span>
             </div>
+            <div class="post-time">5 hours ago · Cleaning</div>
           </div>
-          <div class="form-group">
-            <label>Select Service Category</label>
-            <select class="form-control" name="service" id="bookingServiceSelect" required>
-              <option value="" disabled selected>Choose a specific service...</option>
-              <option value="Comprehensive Cleaning">Comprehensive Cleaning</option>
-              <option value="Space Organization & Relocation">Space Organization & Relocation</option>
-              <option value="Home Improvement & Repairs">Home Improvement & Repairs</option>
-              <option value="Specialized Care & Protection">Specialized Care & Protection</option>
-              <option value="Event & Hospitality Services">Event & Hospitality Services</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Location</label>
-            <input type="text" class="form-control" name="location" placeholder="e.g. Juja City Mall" required>
-          </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;" class="form-grid">
-            <div class="form-group">
-              <label>Preferred Date</label>
-              <input type="date" class="form-control" name="date" required>
+        </div>
+        <img src="https://images.pexels.com/photos/4239031/pexels-photo-4239031.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Deep Cleaning" class="post-image">
+        <div class="post-actions">
+          <button class="action-btn like-btn"><i class="far fa-heart"></i> <span>42</span></button>
+          <button class="action-btn"><i class="far fa-comment"></i> <span>8</span></button>
+          <button class="action-btn"><i class="far fa-share-square"></i> <span>6</span></button>
+        </div>
+        <div class="post-content">
+          <h4 class="post-title">Professional Cleaning Services</h4>
+          <p class="post-description">Wide range of cleaning solutions for a healthy home environment.</p>
+          <ul class="post-bullets">
+            <li><i class="fas fa-check-circle"></i> Deep Cleaning (homes & apartments)</li>
+            <li><i class="fas fa-check-circle"></i> Sofa & Upholstery Cleaning</li>
+            <li><i class="fas fa-check-circle"></i> Carpet & Rug Deep Extraction</li>
+            <li><i class="fas fa-check-circle"></i> Window & Glass Streak-free</li>
+            <li><i class="fas fa-check-circle"></i> Bathroom & Kitchen Sanitization</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Post 3: Home Organization and Management -->
+      <div class="feed-post">
+        <div class="post-header">
+          <div class="post-avatar"><i class="fas fa-boxes"></i></div>
+          <div class="post-author-info">
+            <div class="post-author">
+              Zuuri HomeCares <span class="verified-badge"><i class="fas fa-check-circle"></i></span>
             </div>
-            <div class="form-group">
-              <label>Preferred Time</label>
-              <input type="time" class="form-control" name="time" required>
+            <div class="post-time">1 day ago · Organization</div>
+          </div>
+        </div>
+        <img src="https://www.buyrentkenya.com/discover/wp-content/uploads/2023/11/brkmarketing-image-of-a-closet-room-that-is-stylish-modern-and-ded73a33-4b7f-41ec-b4c1-c329bfdbd5fd-1.png" alt="Home Organization" class="post-image">
+        <div class="post-actions">
+          <button class="action-btn like-btn"><i class="far fa-heart"></i> <span>18</span></button>
+          <button class="action-btn"><i class="far fa-comment"></i> <span>3</span></button>
+          <button class="action-btn"><i class="far fa-share-square"></i> <span>2</span></button>
+        </div>
+        <div class="post-content">
+          <h4 class="post-title">Home Organization & Management</h4>
+          <p class="post-description">Structured and efficiently managed homes.</p>
+          <ul class="post-bullets">
+            <li><i class="fas fa-check-circle"></i> Wardrobe & Closet decluttering</li>
+            <li><i class="fas fa-check-circle"></i> Kitchen & Pantry arrangement</li>
+            <li><i class="fas fa-check-circle"></i> Budgeting & planning support</li>
+            <li><i class="fas fa-check-circle"></i> Grocery restocking</li>
+            <li><i class="fas fa-check-circle"></i> Appliance cleaning & organization</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Post 4: Garden and Compound Care -->
+      <div class="feed-post">
+        <div class="post-header">
+          <div class="post-avatar"><i class="fas fa-tree"></i></div>
+          <div class="post-author-info">
+            <div class="post-author">
+              Zuuri HomeCares <span class="verified-badge"><i class="fas fa-check-circle"></i></span>
             </div>
+            <div class="post-time">2 days ago · Outdoor</div>
           </div>
-          <div class="form-group">
-            <label>Additional Notes</label>
-            <textarea class="form-control" name="notes" rows="3"></textarea>
+        </div>
+        <img src="https://images.ctfassets.net/5kq8dse7hipf/7KYjuxQuy7wYHJ7zlJHyAN/2339e4e7387fa6148429c989bc4a4da6/Garden-maintenance-cost.jpg" alt="Garden Care" class="post-image">
+        <div class="post-actions">
+          <button class="action-btn like-btn"><i class="far fa-heart"></i> <span>31</span></button>
+          <button class="action-btn"><i class="far fa-comment"></i> <span>7</span></button>
+          <button class="action-btn"><i class="far fa-share-square"></i> <span>4</span></button>
+        </div>
+        <div class="post-content">
+          <h4 class="post-title">Garden & Compound Care</h4>
+          <p class="post-description">Beautiful and relaxing outdoor living spaces.</p>
+          <ul class="post-bullets">
+            <li><i class="fas fa-check-circle"></i> Lawn mowing, pruning, weeding</li>
+            <li><i class="fas fa-check-circle"></i> Plant care (watering, fertilizing)</li>
+            <li><i class="fas fa-check-circle"></i> Outdoor cleaning (patio, driveway)</li>
+            <li><i class="fas fa-check-circle"></i> Balcony & terrace care</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Post 5: Additional Home Support -->
+      <div class="feed-post">
+        <div class="post-header">
+          <div class="post-avatar"><i class="fas fa-paw"></i></div>
+          <div class="post-author-info">
+            <div class="post-author">
+              Zuuri HomeCares <span class="verified-badge"><i class="fas fa-check-circle"></i></span>
+            </div>
+            <div class="post-time">3 days ago · Extras</div>
           </div>
-          <button type="submit" id="submitBtn" class="btn-primary">Confirm Booking</button>
-          <div id="formMessage" style="margin-top: 15px; text-align: center; font-weight: 500;"></div>
-        </form>
+        </div>
+        <img src="https://simplyhelping.com.au/wp-content/uploads/2020/09/Did-You-Know-We-Can-Help-with-Pet-Care-Too.png" alt="Pet Care" class="post-image">
+        <div class="post-actions">
+          <button class="action-btn like-btn"><i class="far fa-heart"></i> <span>15</span></button>
+          <button class="action-btn"><i class="far fa-comment"></i> <span>2</span></button>
+          <button class="action-btn"><i class="far fa-share-square"></i> <span>1</span></button>
+        </div>
+        <div class="post-content">
+          <h4 class="post-title">Additional Home Support</h4>
+          <p class="post-description">Extra services that make life easier.</p>
+          <ul class="post-bullets">
+            <li><i class="fas fa-check-circle"></i> Pet care for dogs and cats</li>
+            <li><i class="fas fa-check-circle"></i> Child support (homework supervision)</li>
+            <li><i class="fas fa-check-circle"></i> Car washing services</li>
+            <li><i class="fas fa-check-circle"></i> Small appliance repair</li>
+            <li><i class="fas fa-check-circle"></i> Indoor plant care</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <h3 class="section-title-light"><i class="fas fa-question-circle" style="color: var(--primary-orange); margin-right: 10px;"></i> Frequently Asked Questions</h3>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">What areas do you serve? <i class="fas fa-chevron-right"></i></div>
+      <div class="faq-answer">We currently serve Nairobi, Kiambu, and surrounding areas. Contact us for specific locations.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">Are your staff background-checked? <i class="fas fa-chevron-right"></i></div>
+      <div class="faq-answer">Yes, all our professionals undergo thorough background checks and training.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">What if I'm not satisfied with the service? <i class="fas fa-chevron-right"></i></div>
+      <div class="faq-answer">We offer a 100% satisfaction guarantee – we'll redo any task at no cost.</div>
+    </div>
+
+    <div class="conclusion-text">
+      <strong>Zuuri HomeCares – Care. Comfort. Clean.</strong><br>
+      Whether managing daily household chores, maintaining institutional facilities, or organizing special events, we ensure every task is completed with efficiency and attention to detail.
+    </div>
+  </div>
+</div>
+
+<!-- Institution Modal (similar feed structure, abbreviated for space) -->
+<div id="institutionModal" class="service-modal">
+  <div class="modal-close" onclick="closeAllModals()"><i class="fas fa-times"></i></div>
+  <div class="modal-hero" style="background-image: linear-gradient(to right, rgba(0,0,0,0.7), transparent), url('https://images.pexels.com/photos/6195279/pexels-photo-6195279.jpeg?auto=compress&cs=tinysrgb&w=1200');">
+    <div class="hero-content">
+      <h2>Institution Care Solutions</h2>
+      <div class="hero-tags"><span>Office cleaning</span><span>Maintenance</span><span>Staffing</span><span>Sanitation</span></div>
+      <p class="hero-description">Professional support services for institutions, offices, and organizations that require consistent cleanliness, maintenance, and operational support.</p>
+      <div class="hero-buttons">
+        <a href="https://wa.me/message/CX6MSYKVWG3WA1" target="_blank" class="hero-btn primary"><i class="fab fa-whatsapp"></i> Book now</a>
       </div>
     </div>
   </div>
+  <div class="modal-body">
+    <h3 class="section-title-light">Why Choose Zuuri for Institutions?</h3>
+    <div class="why-us-grid">
+      <div class="why-card"><i class="fas fa-building"></i><h5>Industry Expertise</h5></div>
+      <div class="why-card"><i class="fas fa-clock"></i><h5>24/7 Availability</h5></div>
+      <div class="why-card"><i class="fas fa-certificate"></i><h5>Certified Staff</h5></div>
+      <div class="why-card"><i class="fas fa-recycle"></i><h5>Green Practices</h5></div>
+    </div>
 
-  <script>
-    const servicesData = [
-      { 
-        title: "Comprehensive Cleaning", 
-        img: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=800&q=80", 
-        shortDesc: "Spotless, safe, and hygienic environments.",
-        gallery: [
-          "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&q=80",
-          "https://images.unsplash.com/photo-1527515673514-7c3c350b6f9c?w=400&q=80",
-          "https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=400&q=80",
-          "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=400&q=80"
-        ],
-        detailedDesc: "Our comprehensive cleaning service goes beyond surface cleaning. We use eco-friendly products and advanced equipment to sanitize every corner, ensuring a healthy living or working space. From deep-cleaning carpets to disinfecting high-touch surfaces, our trained professionals leave no spot untouched.",
-        included: ["Residential Deep Cleaning & Sanitization", "Office Cleaning & Workplace Support", "Institutional Facility Cleaning", "Move-in / Move-out Cleaning"],
-        target: "Family homes, apartments, corporate offices, schools, and hospitals.",
-        benefits: "Reduces stress, prevents diseases, and improves living/working quality."
-      },
-      { 
-        title: "Space Organization & Relocation", 
-        img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80", 
-        shortDesc: "Maximize space and safely move your assets.",
-        gallery: [
-          "https://images.unsplash.com/photo-1583947215259-38e31be8751f?w=400&q=80",
-          "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80",
-          "https://images.unsplash.com/photo-1600210492493-0946911123ea?w=400&q=80",
-          "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=400&q=80"
-        ],
-        detailedDesc: "Whether you're moving homes or just need to declutter, our team helps you reorganize efficiently. We carefully pack, label, and transport your belongings, and can even set up your new space exactly as you desire. Our goal is to make relocation stress‑free and your home beautifully ordered.",
-        included: ["Home Organization & Rearranging", "Indoor Relocation & Furniture Movement", "Wardrobe and Kitchen Decluttering", "Airbnb Room Setup"],
-        target: "Homeowners, renters, Airbnb hosts, and corporate offices.",
-        benefits: "Enhances comfort and functionality without heavy lifting or risk of damage."
-      },
-      { 
-        title: "Home Improvement & Repairs", 
-        img: "https://images.unsplash.com/photo-1581141849291-1125c7b692b5?w=800&q=80", 
-        shortDesc: "Transform homes into stylish, functional spaces.",
-        gallery: [
-          "https://images.unsplash.com/photo-1505798577917-a65157d3320a?w=400&q=80",
-          "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=400&q=80",
-          "https://images.unsplash.com/photo-1565183928294-7063f23ce0f8?w=400&q=80",
-          "https://images.unsplash.com/photo-1588854337115-1c67d9247e4d?w=400&q=80"
-        ],
-        detailedDesc: "From mounting a TV to full interior design consultations, our skilled handymen and designers bring your vision to life. We handle minor electrical and plumbing repairs, assemble furniture, and advise on color schemes and layouts that maximize both aesthetics and function.",
-        included: ["Interior Design Consultation", "TV Mounting & Curtain Installation", "Furniture Assembly", "Minor Plumbing & Electrical Repairs"],
-        target: "New homeowners, renters, and property managers.",
-        benefits: "Creates a visually appealing living space with reliable technical support."
-      },
-      { 
-        title: "Specialized Care & Protection", 
-        img: "https://images.unsplash.com/photo-1542838132-92c53300491e?w=800&q=80", 
-        shortDesc: "Professional support for your family, pets, and property.",
-        gallery: [
-          "https://images.unsplash.com/photo-1600881333168-2ef49b341f30?w=400&q=80",
-          "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80",
-          "https://images.unsplash.com/photo-1583511655826-057004427b61?w=400&q=80",
-          "https://images.unsplash.com/photo-1585129819171-80b02d4c85b0?w=400&q=80"
-        ],
-        detailedDesc: "We offer compassionate care for your loved ones—both human and furry. Our trained staff can supervise children with homework, walk and wash pets, and perform thorough pest control to keep your home safe. You can focus on work while we handle the rest.",
-        included: ["Child Supervision & Homework Support", "Pet Care, Washing & Walking", "Pest Control & Home Fumigation"],
-        target: "Working parents, busy families, and property owners.",
-        benefits: "Provides peace of mind, healthy pets, and safe, pest-free environments."
-      },
-      { 
-        title: "Event & Hospitality Services", 
-        img: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80", 
-        shortDesc: "Seamless event management for home and corporate.",
-        gallery: [
-          "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=400&q=80",
-          "https://images.unsplash.com/photo-1555244162-803834f70033?w=400&q=80",
-          "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=400&q=80",
-          "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=400&q=80"
-        ],
-        detailedDesc: "From intimate family gatherings to corporate galas, we handle every detail. Our team includes experienced chefs, waitstaff, and coordinators who ensure your event runs smoothly. We also provide post‑event cleaning so you can relax and enjoy the occasion.",
-        included: ["Event Setup and Decoration", "Private Chefs & Catering", "Waiters, Cleaners & Support Staff", "Venue Logistics Supervision"],
-        target: "Event planners, corporations, families, and institutions.",
-        benefits: "Clients enjoy stress-free, professional, and top-tier event execution."
-      }
-    ];
-
-    const track = document.getElementById('carouselTrack');
-    
-    function renderServices() {
-      track.innerHTML = '';
-      servicesData.forEach((srv, index) => {
-        const cover = document.createElement('div');
-        cover.className = 'service-cover';
-        cover.style.backgroundImage = `url('${srv.img}')`;
-        cover.onclick = () => openServiceModal(index);
-        cover.innerHTML = `
-          <div class="cover-overlay">
-            <h3>${srv.title}</h3>
-            <p>${srv.shortDesc}</p>
+    <div class="feed-posts">
+      <!-- Post 1: Office Cleaning -->
+      <div class="feed-post">
+        <div class="post-header">
+          <div class="post-avatar"><i class="fas fa-building"></i></div>
+          <div class="post-author-info">
+            <div class="post-author">Zuuri HomeCares <span class="verified-badge"><i class="fas fa-check-circle"></i></span></div>
+            <div class="post-time">1 day ago · Office</div>
           </div>
-        `;
-        track.appendChild(cover);
-      });
-    }
-    renderServices();
+        </div>
+        <img src="https://eshinecleaning.com/wp-content/uploads/2025/04/young-contemporary-black-man-in-uniform-cleaning-k-2025-03-16-11-27-29-utc-1.jpg" alt="Office Cleaning" class="post-image">
+        <div class="post-actions">
+          <button class="action-btn like-btn"><i class="far fa-heart"></i> <span>22</span></button>
+          <button class="action-btn"><i class="far fa-comment"></i> <span>4</span></button>
+          <button class="action-btn"><i class="far fa-share-square"></i> <span>3</span></button>
+        </div>
+        <div class="post-content">
+          <h4 class="post-title">Office Cleaning Services</h4>
+          <ul class="post-bullets">
+            <li><i class="fas fa-check-circle"></i> Floor cleaning & vacuuming</li>
+            <li><i class="fas fa-check-circle"></i> Desk & workstation cleaning</li>
+            <li><i class="fas fa-check-circle"></i> Restroom sanitation</li>
+            <li><i class="fas fa-check-circle"></i> Window & glass cleaning</li>
+            <li><i class="fas fa-check-circle"></i> Waste management & recycling</li>
+          </ul>
+        </div>
+      </div>
+      <!-- More posts can be added similarly -->
+    </div>
+    <!-- FAQ and conclusion omitted for brevity but same structure -->
+  </div>
+</div>
 
-    // Auto-slider adjusted for the new 300px width
-    let slideInterval;
-    function startSlider() {
-      slideInterval = setInterval(() => {
-        const slideWidth = window.innerWidth <= 950 ? 290 : 330; 
-        if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 10) {
-          track.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-          track.scrollBy({ left: slideWidth, behavior: 'smooth' });
-        }
-      }, 2000); 
-    }
-    function stopSlider() { clearInterval(slideInterval); }
-    track.addEventListener('mouseenter', stopSlider);
-    track.addEventListener('mouseleave', startSlider);
-    track.addEventListener('touchstart', stopSlider, {passive: true});
-    track.addEventListener('touchend', startSlider, {passive: true});
-    startSlider();
+<!-- Event Modal (similar) -->
+<div id="eventModal" class="service-modal">
+  <div class="modal-close" onclick="closeAllModals()"><i class="fas fa-times"></i></div>
+  <div class="modal-hero" style="background-image: linear-gradient(to right, rgba(0,0,0,0.7), transparent), url('https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=1200');">
+    <div class="hero-content">
+      <h2>Event Organization Services</h2>
+      <div class="hero-tags"><span>Planning</span><span>Catering</span><span>Setup</span><span>Cleanup</span></div>
+      <p class="hero-description">Professional event support services to help clients host memorable and well-organized events.</p>
+      <div class="hero-buttons">
+        <a href="https://wa.me/message/CX6MSYKVWG3WA1" target="_blank" class="hero-btn primary"><i class="fab fa-whatsapp"></i> Book now</a>
+      </div>
+    </div>
+  </div>
+  <div class="modal-body">
+    <h3 class="section-title-light">Why Choose Zuuri for Events?</h3>
+    <div class="why-us-grid">
+      <div class="why-card"><i class="fas fa-heart"></i><h5>Stress-Free</h5></div>
+      <div class="why-card"><i class="fas fa-magic"></i><h5>Creative Designs</h5></div>
+      <div class="why-card"><i class="fas fa-handshake"></i><h5>Reliable Partners</h5></div>
+      <div class="why-card"><i class="fas fa-stopwatch"></i><h5>Timely Execution</h5></div>
+    </div>
+    <div class="feed-posts">
+      <div class="feed-post">
+        <div class="post-header">
+          <div class="post-avatar"><i class="fas fa-calendar-alt"></i></div>
+          <div class="post-author-info">
+            <div class="post-author">Zuuri HomeCares <span class="verified-badge"><i class="fas fa-check-circle"></i></span></div>
+            <div class="post-time">3 days ago · Events</div>
+          </div>
+        </div>
+        <img src="https://riverineplace.com/wp-content/uploads/2024/09/A-hotels-buffet-style-type-of-catering-service.jpg" alt="Event Setup" class="post-image">
+        <div class="post-actions">
+          <button class="action-btn like-btn"><i class="far fa-heart"></i> <span>45</span></button>
+          <button class="action-btn"><i class="far fa-comment"></i> <span>12</span></button>
+          <button class="action-btn"><i class="far fa-share-square"></i> <span>8</span></button>
+        </div>
+        <div class="post-content">
+          <h4 class="post-title">Event Planning & Coordination</h4>
+          <ul class="post-bullets">
+            <li><i class="fas fa-check-circle"></i> Full event planning & scheduling</li>
+            <li><i class="fas fa-check-circle"></i> Venue preparation & decoration</li>
+            <li><i class="fas fa-check-circle"></i> Equipment setup & logistics</li>
+            <li><i class="fas fa-check-circle"></i> Guest support & coordination</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-    function openServiceModal(index) {
-      const srv = servicesData[index];
-      document.getElementById('modalTitle').innerText = srv.title;
+<!-- Wiki Modal (similar feed, but with facts as posts) -->
+<div id="wikiModal" class="service-modal">
+  <div class="modal-close" onclick="closeAllModals()"><i class="fas fa-times"></i></div>
+  <div class="modal-hero" style="background-image: linear-gradient(to right, rgba(0,0,0,0.7), transparent), url('https://img.freepik.com/free-photo/strict-holding-bucket-cleaning-tools-young-africanamerican-cleaner-male-uniform-with-gloves-isolated-green-background_141793-136219.jpg?semt=ais_rp_50_assets&w=740&q=80');">
+    <div class="hero-content">
+      <h2>Knowledge Hub</h2>
+      <div class="hero-tags"><span>About Us</span><span>Operations</span><span>Stats</span><span>Gallery</span></div>
+      <p class="hero-description">Discover the history, values, and operational excellence behind Zuuri Homecares.</p>
+    </div>
+  </div>
+  <div class="modal-body">
+    <div class="feed-posts">
+      <div class="feed-post">
+        <div class="post-header">
+          <div class="post-avatar"><i class="fas fa-history"></i></div>
+          <div class="post-author-info">
+            <div class="post-author">Zuuri HomeCares <span class="verified-badge"><i class="fas fa-check-circle"></i></span></div>
+            <div class="post-time">Founded 2024</div>
+          </div>
+        </div>
+        <img src="https://images.pexels.com/photos/4239031/pexels-photo-4239031.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Our History" class="post-image">
+        <div class="post-actions">
+          <button class="action-btn like-btn"><i class="far fa-heart"></i> <span>78</span></button>
+          <button class="action-btn"><i class="far fa-comment"></i> <span>15</span></button>
+          <button class="action-btn"><i class="far fa-share-square"></i> <span>10</span></button>
+        </div>
+        <div class="post-content">
+          <h4 class="post-title">Our History & Values</h4>
+          <p class="post-description">Founded in 2024, we've served 1000+ clients with integrity and excellence.</p>
+          <ul class="post-bullets">
+            <li><i class="fas fa-check-circle"></i> 25+ Trained Professionals</li>
+            <li><i class="fas fa-check-circle"></i> 98% Client Satisfaction</li>
+            <li><i class="fas fa-check-circle"></i> Avg Response < 2 hours</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Gallery -->
+    <h3 class="section-title-light"><i class="fas fa-images"></i> Work Gallery</h3>
+    <div class="gallery-grid-wiki">
+      <img src="https://gmcleaning.co.ke/wp-content/uploads/2025/09/Professional-Upholstery-Cleaning-Service.webp" alt="Work 1">
+      <img src="https://www.makeitclean.com.au/wp-content/uploads/2025/09/Strata-buildings-cleaning.webp" alt="Work 2">
+      <img src="https://www.kcjlandscaping.ae/wp-content/uploads/2020/11/Garden-Maintenance-Services-Dubai-2.jpg" alt="Work 3">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz4aeMwRUM91k60A1oHmW69JWR1Uufwe59zQ&s" alt="Work 4">
+    </div>
+  </div>
+</div>
 
-      const galleryDiv = document.getElementById('modalGallery');
-      galleryDiv.innerHTML = '';
-      srv.gallery.forEach(imgUrl => {
-        const img = document.createElement('img');
-        img.src = imgUrl;
-        img.alt = srv.title;
-        galleryDiv.appendChild(img);
-      });
+<script>
+  // Carousel data
+  const servicesData = [
+    { title: "HomeCare Services", img: "https://gmcleaning.co.ke/wp-content/uploads/2025/09/professional-carpet-cleaning.webp", shortDesc: "Professional home care tailored to your needs.", modalId: "homecareModal" },
+    { title: "Institution Care", img: "https://images.pexels.com/photos/6195279/pexels-photo-6195279.jpeg?auto=compress&cs=tinysrgb&w=600", shortDesc: "Expert cleaning and maintenance for institutions.", modalId: "institutionModal" },
+    { title: "Event Organization", img: "https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=600", shortDesc: "Flawless event planning and execution.", modalId: "eventModal" },
+    { title: "Knowledge Hub", img: "https://img.freepik.com/premium-photo/positive-african-american-maid-cleaning-kitchen-smiling_116547-51882.jpg", shortDesc: "Discover our history, values, and operations.", modalId: "wikiModal" }
+  ];
 
-      document.getElementById('modalDetailedDesc').innerText = srv.detailedDesc;
+  const track = document.getElementById('carouselTrack');
+  const waLink = "https://wa.me/message/CX6MSYKVWG3WA1";
 
-      const listContainer = document.getElementById('modalIncluded');
-      listContainer.innerHTML = '';
-      srv.included.forEach(item => {
-        let li = document.createElement('li');
-        li.innerText = item;
-        listContainer.appendChild(li);
-      });
-
-      document.getElementById('modalTarget').innerText = srv.target;
-      document.getElementById('modalBenefits').innerText = srv.benefits;
+  function renderServices() {
+    track.innerHTML = '';
+    servicesData.forEach((srv) => {
+      const cover = document.createElement('div');
+      cover.className = 'service-cover';
+      cover.style.backgroundImage = `url('${srv.img}')`;
       
-      document.getElementById('serviceModal').classList.add('active');
-    }
+      const overlay = document.createElement('div');
+      overlay.className = 'cover-overlay';
+      
+      const title = document.createElement('h3');
+      title.textContent = srv.title;
+      overlay.appendChild(title);
+      
+      const desc = document.createElement('p');
+      desc.textContent = srv.shortDesc;
+      overlay.appendChild(desc);
+      
+      const btnContainer = document.createElement('div');
+      btnContainer.className = 'cover-buttons';
+      
+      const waBtn = document.createElement('a');
+      waBtn.href = waLink;
+      waBtn.target = '_blank';
+      waBtn.className = 'card-wa-btn';
+      waBtn.innerHTML = '<i class="fab fa-whatsapp"></i>';
+      waBtn.addEventListener('click', (e) => e.stopPropagation());
+      btnContainer.appendChild(waBtn);
+      
+      const readMore = document.createElement('span');
+      readMore.className = 'read-more-badge';
+      readMore.innerHTML = 'Discover <i class="fas fa-arrow-right"></i>';
+      btnContainer.appendChild(readMore);
+      
+      overlay.appendChild(btnContainer);
+      cover.appendChild(overlay);
+      
+      cover.addEventListener('click', () => openModal(srv.modalId));
+      track.appendChild(cover);
+    });
     
-    function closeServiceModal() { document.getElementById('serviceModal').classList.remove('active'); }
+    setTimeout(() => {
+      const covers = document.querySelectorAll('.service-cover');
+      const middleIndex = Math.floor(covers.length / 2);
+      if (covers[middleIndex]) covers[middleIndex].scrollIntoView({ behavior: 'auto', inline: 'center', block: 'nearest' });
+      requestAnimationFrame(updateScrollClasses);
+    }, 10);
+  }
 
-    function openBookingModal(preselectedService = "") {
-      document.getElementById('bookingModal').classList.add('active');
-      if(preselectedService) {
-        const select = document.getElementById('bookingServiceSelect');
-        for(let i=0; i<select.options.length; i++) {
-          if(select.options[i].text.includes(preselectedService) || select.options[i].value.includes(preselectedService)) {
-            select.selectedIndex = i; break;
-          }
-        }
+  function updateScrollClasses() {
+    const trackRect = track.getBoundingClientRect();
+    const trackCenter = trackRect.left + trackRect.width / 2;
+    const covers = document.querySelectorAll('.service-cover');
+    let closestCover = null, minDistance = Infinity;
+    covers.forEach(cover => {
+      const coverRect = cover.getBoundingClientRect();
+      const coverCenter = coverRect.left + coverRect.width / 2;
+      const distance = Math.abs(coverCenter - trackCenter);
+      if (distance < minDistance) { minDistance = distance; closestCover = cover; }
+    });
+    covers.forEach(cover => {
+      if (cover === closestCover) { cover.classList.add('active'); cover.classList.remove('prev', 'next'); } 
+      else { cover.classList.remove('active');
+        const coverRect = cover.getBoundingClientRect();
+        const coverCenter = coverRect.left + coverRect.width / 2;
+        if (coverCenter < trackCenter) { cover.classList.add('prev'); cover.classList.remove('next'); } 
+        else { cover.classList.add('next'); cover.classList.remove('prev'); }
       }
-    }
-    
-    function closeBookingModal() { document.getElementById('bookingModal').classList.remove('active'); }
+    });
+  }
 
-    function submitBooking(event) {
-      event.preventDefault();
-      const btn = document.getElementById('submitBtn');
-      const msg = document.getElementById('formMessage');
-      const form = document.getElementById('bookingForm');
-      
-      btn.innerHTML = 'Processing...';
-      btn.disabled = true;
-      
-      setTimeout(() => {
-        msg.style.color = 'var(--primary-green)';
-        msg.innerText = 'Booking confirmed! We’ll contact you shortly.';
-        form.reset();
-        btn.innerHTML = 'Confirm Booking';
-        btn.disabled = false;
-        setTimeout(closeBookingModal, 3000);
-      }, 1500);
+  // Modal & back gesture handling
+  let modalOpen = false;
+  let ignoreNextPop = false;
+
+  function openModal(modalId) {
+    if (!modalOpen) {
+      history.pushState({ modal: true }, '');
     }
-  </script>
+    closeAllModals(); 
+    document.getElementById(modalId).classList.add('active');
+    document.body.style.overflow = 'hidden';
+    modalOpen = true;
+  }
+  
+  function closeAllModals() {
+    if (!modalOpen) return;
+    const modals = document.querySelectorAll('.service-modal');
+    modals.forEach(m => m.classList.remove('active'));
+    document.body.style.overflow = 'auto';
+    modalOpen = false;
+
+    if (!ignoreNextPop) {
+      ignoreNextPop = true;
+      history.back();
+      setTimeout(() => { ignoreNextPop = false; }, 100);
+    }
+  }
+
+  window.addEventListener('popstate', function(event) {
+    if (ignoreNextPop) return;
+    if (modalOpen) {
+      const modals = document.querySelectorAll('.service-modal');
+      modals.forEach(m => m.classList.remove('active'));
+      document.body.style.overflow = 'auto';
+      modalOpen = false;
+    }
+  });
+
+  document.querySelectorAll('.service-modal').forEach(modal => {
+    modal.addEventListener('click', function(e) {
+      if (e.target === this) closeAllModals();
+    });
+  });
+
+  // FAQ toggle
+  window.toggleFaq = function(element) {
+    const item = element.parentElement;
+    item.classList.toggle('active');
+  };
+
+  // Like button functionality (red heart)
+  document.addEventListener('click', function(e) {
+    const likeBtn = e.target.closest('.like-btn');
+    if (likeBtn) {
+      e.preventDefault();
+      const icon = likeBtn.querySelector('i');
+      const countSpan = likeBtn.querySelector('span');
+      let count = parseInt(countSpan.textContent);
+      
+      if (icon.classList.contains('far')) {
+        // Like
+        icon.classList.remove('far');
+        icon.classList.add('fas');
+        likeBtn.classList.add('liked');
+        count++;
+      } else {
+        // Unlike
+        icon.classList.remove('fas');
+        icon.classList.add('far');
+        likeBtn.classList.remove('liked');
+        count--;
+      }
+      countSpan.textContent = count;
+    }
+  });
+
+  let ticking = false;
+  track.addEventListener('scroll', () => { if (!ticking) { window.requestAnimationFrame(() => { updateScrollClasses(); ticking = false; }); ticking = true; } });
+  window.addEventListener('resize', () => { requestAnimationFrame(updateScrollClasses); });
+
+  renderServices();
+
+  // Image fallback
+  document.querySelectorAll('.service-cover').forEach(slide => {
+    const imgUrl = slide.style.backgroundImage.slice(5, -2);
+    const img = new Image();
+    img.onerror = () => { slide.style.backgroundImage = "url('https://images.pexels.com/photos/4239031/pexels-photo-4239031.jpeg?w=600')"; };
+    img.src = imgUrl;
+  });
+</script>
+
+<!-- ===== STRUCTURED DATA (LocalBusiness) ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Zuuri Homecares",
+  "image": "https://lh3.googleusercontent.com/d/1lasYaUtJ_p5aQLwlrZQG_TA5Kx2uw2Ly",
+  "description": "Professional home care, moving, relocation, residential cleaning, commercial maintenance, and event services serving Nairobi, Kiambu, and surrounding areas.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Juja",
+    "addressRegion": "Kiambu",
+    "addressCountry": "KE"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -1.091,
+    "longitude": 37.011
+  },
+  "url": "https://zuurihomecares.com",
+  "telephone": "+254719300421",
+  "priceRange": "$$",
+  "openingHours": "Mo-Su 08:00-20:00",
+  "sameAs": [
+    "https://wa.me/message/CX6MSYKVWG3WA1",
+    "https://instagram.com/zuurihomecare"
+  ]
+}
+</script>
 </body>
 </html>
